@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloka Page</title>
+    <link rel="stylesheet" href="page2-styles.css">
+</head>
+<body>
+
+    <div class="background">
+        <div class="content">
+            <div class="sloka-container">
+                <div class="box">
+                    <div class="sloka" id="sloka-text">
+                        <!-- Sloka content will be loaded here -->
+                    </div>
+                    <button class="toggle-button" onclick="toggleMeaning()">Show Meaning & Commentary</button>
+                    <div class="meaning-commentary" id="meaning-commentary">
+                        <!-- Meaning and Commentary content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            <button class="nav-button left" onclick="changeSloka(-1)">&#10094;</button>
+            <button class="nav-button right" onclick="changeSloka(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const slokas = [
+        {
+            text: `
+                    <p>नियतं कुरु कर्म त्वं कर्म ज्यायो ह्यकर्मण: |</p>
+                    <p>शरीरयात्रापि च ते न प्रसिद्ध्येदकर्मण: ||</p>
+            `,
+            meaning: `
+                    <p>You should thus perform your prescribed Vedic duties, since action is superior to inaction. By ceasing activity, even your bodily maintenance will not be possible.</p>
+            `,
+            commentary: `
+                    <p>Until the mind and intellect reach a state where they are absorbed in God-consciousness, physical work performed in an attitude of duty is very beneficial for one’s internal purification. Hence, the Vedas prescribe duties for humans, to help them discipline their mind and senses. In fact, laziness is described as one of the biggest pitfalls on the spiritual path:
+
+ālasya hi manuṣhyāṇāṁ śharīrastho mahān ripuḥ
+
+nāstyudyamasamo bandhūḥ kṛitvā yaṁ nāvasīdati [v4]
+
+“Laziness is the greatest enemy of humans, and is especially pernicious since it resides in their own body. Work is their most trustworthy friend, and is a guarantee against downfall.” Even the basic bodily activities like eating, bathing, and maintaining proper health require work. These obligatory actions are called nitya karm. To neglect these basic maintenance activities is not a sign of progress, but an indication of slothfulness, leading to emaciation and weakness of both body and mind. On the other hand, a cared for and nourished body is a positive adjunct on the road to spirituality. Thus, the state of inertia does not lend itself either to material or spiritual achievement. For the progress of our own soul, we should embrace the duties that help elevate and purify our mind and intellect.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>कर्मणैव हि संसिद्धिमास्थिता जनकादय: |</p>
+                    <p>लोकसंग्रहमेवापि सम्पश्यन्कर्तुमर्हसि || 20||</p>
+                    <p>यद्यदाचरति श्रेष्ठस्तत्तदेवेतरो जन: |</p>
+                    <p>स यत्प्रमाणं कुरुते लोकस्तदनुवर्तते ||</p>
+            `,
+            meaning: `
+                    <p>By performing their prescribed duties, King Janak and others attained perfection. You should also perform your duties to set an example for the good of the world. Whatever actions great persons perform, common people follow. Whatever standards they set, all the world pursues.</p>
+            `,
+            commentary: `
+                    <p>King Janak attained perfection through karm yog, while discharging his kingly duties. Even after reaching the transcendental platform, he continued to do his worldly duties, purely for the reason that it would set a good example for the world to follow. Many other Saints did the same.
+
+Humanity is inspired by the ideals that they see in the lives of great people. Such leaders inspire society by their example and become shining beacons for the masses to follow. Leaders of society thus have a moral responsibility to set lofty examples for inspiring the rest of the population by their words, deeds, and character. When noble leaders are in the forefront, the rest of society naturally gets uplifted in morality, selflessness, and spiritual strength. But in times when there is a vacuum of principled leadership, the rest of society has no standards to pursue and slumps into self-centeredness, moral bankruptcy, and spiritual lassitude. Hence, great personalities should always act in an exemplary manner to set the standard for the world. Even though they themselves may have risen to the transcendental platform, and may not need to perform prescribed Vedic duties, by doing so, they inspire others to perform prescribed Vedic actions.
+
+If a great leader of society becomes a karm sanyāsī, and renounces work, it sets an errant precedent for others. The leader may be at the transcendental platform and therefore eligible to renounce work and engage completely in spirituality. However, others in society use their example as an excuse for escapism, to run away from their responsibilities. Such escapists cite the instances of the great karm sanyāsīs, such as Shankaracharya, Madhvacharya, Nimbarkacharya, and Chaitanya Mahaprabhu. Following their lofty footsteps, these imposters also renounce worldly duties and take sanyās, even though they have not yet attained the purity of mind required for it. In India, we find thousands of such sadhus. They copy the examples of the great sanyāsīs and don the ochre robes, without the concurrent internal enlightenment and bliss. Though externally renounced, their nature forces them to seek happiness, and devoid of the divine bliss of God, they begin indulging in the lowly pleasure of intoxication. Thus, they slip even below the level of people in household life, as stated in the following verse:
+
+brahma jñāna jānyo nahīṅ, karm diye chhiṭakāya,
+tulasī aisī ātmā sahaja naraka mahñ jāya. [v15]
+
+Sage Tulsidas says: “One who renounces worldly duties, without the concurrent internal enlightenment with divine knowledge, treads the quick path to hell.”
+
+Instead, if a great leader is a karm yogi, at least the followers will continue to do their karm and dutifully perform their responsibilities. This will help them learn to discipline their mind and senses, and slowly rise to the transcendental platform. Hence, to present an example for society to follow, Shree Krishna suggests that Arjun should practice karm yog. He now gives his own example to illustrate the above point.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>नात्यश्नतस्तु योगोऽस्ति न चैकान्तमनश्नत: |</p>
+                    <p>न चाति स्वप्नशीलस्य जाग्रतो नैव चार्जुन || </p>
+            `,
+            meaning: `
+                    <p>O Arjun, those who eat too much or too little, sleep too much or too little, cannot attain success in Yog.</p>
+            `,
+            commentary: `
+                    <p>After describing the object of meditation and the end-goal achieved by it, Shree Krishna gives some regulations to follow. He states that those who break the rules of bodily maintenance cannot be successful in Yog. Often beginners on the path, with their incomplete wisdom state: “You are the soul and not this body. So simply engage in spiritual activity, forgetting about the maintenance of the body.”
+
+However, such a philosophy cannot get one too far. It is true that we are not the body, yet the body is our carrier as long as we live, and we are obliged to take care of it. The Ayurvedic text, Charak Samhitā states: śharīra mādhyaṁ khalu dharma sādhanam [v11] “The body is the vehicle for engaging in religious activity.” If the body becomes unwell, then spiritual pursuits get impeded too. The Ramayan states: tanu binu bhajana veda nahiṅ varanā [v12] “The Vedas do not recommend that we ignore the body, while engaging in spirituality.” In fact, they instruct us to take good care of our body with the help of material science. The Īśhopaniṣhad states:
+
+andhaṁ tamaḥ praviśhanti ye ’vidyām upāsate
+
+tato bhūya iva te tamo ya u vidyāyām ratāḥ (9)[v13]
+
+“Those who cultivate only material science go to hell. But those who cultivate only spiritual science go to an even darker hell.” Material science is necessary for the maintenance of our body, while spiritual science is necessary for the manifestation of the internal divinity within us. We must balance both in our lives to reach the goal of life. Hence, yogāsans, prāṇāyām, and the science of proper diet are an essential part of Vedic knowledge. Each of the four Vedas has its associate Veda for material knowledge. The associate Veda of Atharva Veda is Ayurveda, which is the hoary science of medicine and good health. This demonstrates that the Vedas lay emphasis on the maintenance of physical health. Accordingly, Shree Krishna says that overeating or not eating at all, extreme activity or complete inactivity, etc. are all impediments to Yog. Spiritual practitioners should take good care of their body, by eating fresh nutritious food, doing daily exercise, and getting the right amount of sleep every night.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>यदग्रे चानुबन्धे च सुखं मोहनमात्मन: |</p>
+                    <p>निद्रालस्यप्रमादोत्थं तत्तामसमुदाहृतम् ||</p>
+            `,
+            meaning: `
+                    <p> That happiness which covers the nature of the self from beginning to end, and which is derived from sleep, indolence, and negligence, is said to be in the mode of ignorance.</p>
+            `,
+            commentary: `
+                    <p>Tāmasic happiness is of the lowest kind and is foolishness from beginning to end. It throws the soul into the darkness of ignorance. And yet, since there is a tiny experience of pleasure in it, people get addicted to it. That is why cigarette smokers find it difficult to break their habit, even while knowing fully well it is harming them. They are unable to reject the happiness they get from the addiction. Shree Krishna states that such pleasures—derived from sleep, laziness, and negligence—are in the mode of ignorance.</p>
+            `,
+        },
+
+        
+            // Add more slokas as needed
+        ];
+
+        let currentIndex = 0;
+
+        function loadSloka(index) {
+            const slokaText = document.getElementById('sloka-text');
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const sloka = slokas[index];
+
+            slokaText.innerHTML = sloka.text;
+            meaningCommentary.innerHTML = sloka.meaning + '<br>' + sloka.commentary;
+        }
+
+        function changeSloka(direction) {
+            currentIndex = (currentIndex + direction + slokas.length) % slokas.length;
+            loadSloka(currentIndex);
+        }
+
+        function toggleMeaning() {
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const button = document.querySelector('.toggle-button');
+
+            if (meaningCommentary.style.display === 'none' || meaningCommentary.style.display === '') {
+                meaningCommentary.style.display = 'block';
+                button.textContent = 'Hide Meaning & Commentary';
+            } else {
+                meaningCommentary.style.display = 'none';
+                button.textContent = 'Show Meaning & Commentary';
+            }
+        }
+
+        // Load the first sloka on page load
+        window.onload = function() {
+            loadSloka(currentIndex);
+        };
+    </script>
+
+</body>
+</html>

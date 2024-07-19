@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloka Page</title>
+    <link rel="stylesheet" href="page2-styles.css">
+</head>
+<body>
+
+    <div class="background">
+        <div class="content">
+            <div class="sloka-container">
+                <div class="box">
+                    <div class="sloka" id="sloka-text">
+                        <!-- Sloka content will be loaded here -->
+                    </div>
+                    <button class="toggle-button" onclick="toggleMeaning()">Show Meaning & Commentary</button>
+                    <div class="meaning-commentary" id="meaning-commentary">
+                        <!-- Meaning and Commentary content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            <button class="nav-button left" onclick="changeSloka(-1)">&#10094;</button>
+            <button class="nav-button right" onclick="changeSloka(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const slokas = [
+        {
+            text: `
+                    <p>दु:खेष्वनुद्विग्नमना: सुखेषु विगतस्पृह: |</p>
+                    <p>वीतरागभयक्रोध: स्थितधीर्मुनिरुच्यते ||</p>
+            `,
+            meaning: `
+                    <p> One whose mind remains undisturbed amidst misery, who does not crave for pleasure, and who is free from attachment, fear, and anger, is called a sage of steady wisdom.</p>
+            `,
+            commentary: `
+                    <p>In this verse, Shree Krishna describes sages of steady wisdom as: 1) Vīta rāga—they give up craving for pleasure, 2) Vīta bhaya—they remain free from fear, 3) Vīta krodha—they are devoid of anger.
+
+An enlightened person does not allow the mind to harbor the material frailties of lust, anger, greed, envy, etc. Only then can the mind steadily contemplate on transcendence and be fixed in the divine. If one permits the mind to brood over miseries, then the contemplation on the divine ceases and the mind is dragged down from the transcendental level. The process of torture works in the same manner. More than the present pain itself, it is the memories of past pain and apprehensions of future pain that torment the mind. But when the mind drops these two and has to simply grope with the present sensation, the pain surprisingly shrinks to a manageable (within the limits of tolerance) size. It is well known that historically Buddhist monks adopted a similar technique for tolerating torture from invading conquerors.
+
+Similarly, if the mind craves external pleasures, it runs to the objects of enjoyment, and is again diverted from divine contemplation. So a sage of steady wisdom is one who does not allow the mind to hanker for pleasure or lament for miseries. Further, such a sage does not permit the mind to succumb to the urges of fear and anger. In this way, the mind becomes situated on the transcendental level.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>ध्यायतो विषयान्पुंस: सङ्गस्तेषूपजायते |</p>
+                    <p>सङ्गात्सञ्जायते काम: कामात्क्रोधोऽभिजायते || </p>
+            `,
+            meaning: `
+                    <p>While contemplating on the objects of the senses, one develops attachment to them. Attachment leads to desire, and from desire arises anger.</p>
+            `,
+            commentary: `
+                    <p>Anger, greed, lust, etc. are considered in the Vedic scriptures as mānas rog, or diseases of the mind. The Ramayan states: mānas roga kachhuka maiṅ gāe hahiṅ saba keṅ lakhi biralenha pāe [v53] We are all aware of the diseases of the body—even a single bodily ailment has the power to make one’s whole day miserable—but we do not realize that we are being continuously tormented by multiple mental ailments. And since we do not recognize lust, anger, greed, etc. as mental diseases, we do not try to cure them. Psychology is a branch of human knowledge that attempts to analyze these ailments and propose solutions to them. However, both the analysis and the solution presented by western psychology leave much to be desired, and appear to be gross approximations of the reality of the mind.
+
+In this and the subsequent verse, Shree Krishna has given perfect and penetrating insight into functioning of the mind. He explains that when we repeatedly contemplate that there is happiness in some object, the mind becomes attached to it. For example, in a class there are a number of boys and girls, and they interact innocuously with each other. One day one boy notices something about one girl and starts thinking, “I would be very happy if she were mine.” As he continuously repeats this thought in his mind, his mind becomes attached to her. He tells his friends that he is madly in love with her, and he is unable to study because his mind repeatedly goes to her. His friends ridicule him that they all interact with her in class, but none of them is crazy about her. Why is he losing his sleep and ruining his studies because of her? The fact is that he repeatedly thought that there was happiness in the girl, and so his mind became attached to her.
+
+Now attachment seems quite innocuous by itself. But the problem is that from attachment comes desire. If one is attached to drinks, the desire for drinks comes repeatedly to the mind. If one is attached to cigarettes, then thoughts of the pleasure of smoking cigarettes repeatedly flow in the mind, creating a craving for them. In this way, attachment leads to desire.
+
+Once desire develops, it gives birth to two more problems—greed and anger. Greed comes from the fulfillment of desire. Jimi pratilābha lobha adhikāī (Ramayan) [v54] “If you satisfy desire, it leads to greed.” Thus desire is never eliminated by satiating it:
+
+yat pṛithivyāṁ vrīhi-yavaṁ hiraṇyaṁ paśhavaḥ striyaḥ
+na duhyanti manaḥ-prītiṁ puṁsaḥ kāma-hatasya te (Bhāgavatam 9.19.13) [v55]
+
+“If one person were to get all the wealth, luxuries, and sensual objects in the world, that person’s desire would still not be satiated. Hence, knowing it to be the cause of misery, an intelligent person should renounce desire.”
+
+On the flip side what happens if the fulfillment of desire is obstructed? It gives rise to anger. Bear in mind that anger does not arise by itself. It is created from the obstruction of desire; and desire arises from attachment, while attachment comes from contemplation of the sense objects. In this manner, we see how the simple act of contemplating the pleasures of sense objects leads downward to the twin diseases of greed and anger. In the next verse Shree Krishna continues the chain further down, and explains the consequences of anger.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>क्रोधाद्भवति सम्मोह: सम्मोहात्स्मृतिविभ्रम: |</p>
+                    <p>स्मृतिभ्रंशाद् बुद्धिनाशो बुद्धिनाशात्प्रणश्यति || </p>
+            `,
+            meaning: `
+                    <p>Anger leads to clouding of judgment, which results in bewilderment of memory. When memory is bewildered, the intellect gets destroyed; and when the intellect is destroyed, one is ruined.</p>
+            `,
+            commentary: `
+                    <p>Anger impairs judgment, just as the morning mist creates a hazy covering on the sunlight. In anger, people commit mistakes that they later regret, because the intellect gets clouded by the haze of emotions. People say, “He is twenty years elder to me. Why did I speak in this manner to him? What happened to me?” What happened was that the faculty of judgment was affected by anger, and hence the mistake of scolding an elder was made.
+
+When the intellect is clouded, it leads to bewilderment of memory. The person then forgets what is right and what is wrong, and flows along with the surge of emotions. The downward descent continues from there, and bewilderment of memory results in destruction of the intellect. And since the intellect is the internal guide, when it gets destroyed, one is ruined. In this manner, the path of descent from divinity to impiety has been described beginning with contemplation on the sense objects to the destruction of the intellect.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>कामक्रोधवियुक्तानां यतीनां यतचेतसाम् |</p>
+                    <p>अभितो ब्रह्मनिर्वाणं वर्तते विदितात्मनाम् ||</p>
+            `,
+            meaning: `
+                    <p>For those sanyāsīs, who have broken out of anger and lust through constant effort, who have subdued their mind, and are self-realized, liberation from material existence is both here and hereafter.</p>
+            `,
+            commentary: `
+                    <p>Karm-yog is the safer path to take for most people, as explained in verse 5.2, and that is why Shree Krishna has strongly recommended it to Arjun.  However, for someone who is truly detached from the world, karm sanyās is also suitable.  It is advantageous in that there is no diversion of time and energy toward worldly duties, and one can dedicate oneself fully to the practice of spirituality.  There have been many accomplished sanyāsīs in history.  Shree Krishna states that such true karm sanyāsīs also make rapid progress and experience peace everywhere.  By eliminating the urges of desire and anger and subduing their mind, they attain perfect peace both in this life and here-after.  
+
+We often harbor the misconception that external circumstances are at fault for the lack of peace in our lives, and we hope for the day when the situation will become conducive to peace of mind.  However, peace is not dependent upon the external situation; it is a product of purified senses, mind, and intellect.  The sanyāsīs, with their mind and thoughts turned inward, find the ocean of peace within, independent of external circumstances.  And then, with the internal machinery in order, they experience the same peace everywhere, and are liberated in this world itself.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>  अभयं सत्त्वसंशुद्धिर्ज्ञानयोगव्यवस्थिति: |</p>
+                    <p>  दानं दमश्च यज्ञश्च स्वाध्यायस्तप आर्जवम् || </p>
+                    <p>  अहिंसा सत्यमक्रोधस्त्याग: शान्तिरपैशुनम् |</p>
+                    <p>  दया भूतेष्वलोलुप्त्वं मार्दवं ह्रीरचापलम् || </p>
+                    <p>  तेज: क्षमा धृति: शौचमद्रोहोनातिमानिता |</p>
+                    <p> भवन्ति सम्पदं दैवीमभिजातस्य भारत || </p>
+            `,
+            meaning: `
+                    <p>The Supreme Divine Personality said: O scion of Bharat, these are the saintly virtues of those endowed with a divine nature—fearlessness, purity of mind, steadfastness in spiritual knowledge, charity, control of the senses, sacrifice, study of the sacred books, austerity, and straightforwardness; non-violence, truthfulness, absence of anger, renunciation, peacefulness, restraint from fault-finding, compassion toward all living beings, absence of covetousness, gentleness, modesty, and lack of fickleness; vigor, forgiveness, fortitude, cleanliness, bearing enmity toward none, and absence of vanity.</p>
+            `,
+            commentary: `
+                    <p>Here, Shree Krishna describes twenty-six virtues of a saintly nature. These should be cultivated as a part of our spiritual practice for elevating ourselves to the supreme goal.
+
+Fearlessness. It is the state of freedom from concern for present and future miseries. Inordinate attachment of any kind causes fear. Attachment to wealth leads to dread of impoverishment, attachment to social prestige causes fear of infamy, attachment to vice leads to anxiety about the consequences of sin, attachment to bodily comfort causes the fear of ill-health, and so on. Detachment and surrender to God vanquish all fear from the heart.
+
+Purity of mind. This is the state of inner cleanliness. The mind generates and harbors thoughts, sentiments, feelings, emotions, etc. When these are ethical, wholesome, positive, and uplifting, the mind is considered pure, and when they are unethical and degrading, the mind is considered impure. Attachment to objects in the modes of passion and ignorance contaminate the mind, while attachment to God purifies it.
+
+Steadfastness in spiritual knowledge. It is said: tattva vismaraṇāt bhekivat [v1] “When human beings forget what is right and what is wrong they become like animals.” Thus, the path of virtue is forged by remaining steadfast in the awareness of spiritual principles.
+
+Charity. It refers to the giving away of one’s possessions for a good cause or to needy persons. True charity is that which is done, not with a feeling of superiority, but with a sense of gratefulness to God for the opportunity to help. Material charity, done for the welfare of the body, helps others temporarily. Spiritual charity, done at the platform of the soul, helps eliminate the cause of all suffering, which is separation from God. Consequently, it is considered higher than material charity.
+
+Control of the senses. The senses are notorious in their ability to drag the mind deeper into material illusion. They tempt the living being to seek immediate gratification. However, walking the path of virtue requires forsaking the lower sensual pleasures for achieving the higher goal. Thus, restraint of the senses is an essential virtue for treading the path to God.
+
+Sacrifice. It means executing one’s Vedic duties and social obligations, even though they may not be enjoyable. Sacrifice is considered perfect when it is done for the pleasure of God.
+
+Study of the sacred books. An important aspect of cultivating the divine nature is to feed the intellect with uplifting knowledge from the scriptures. When the intellect is illumined with proper knowledge, one’s actions naturally become sublime.
+
+Austerity. The body-mind-senses are such that, if we pamper them, they become pleasure-seeking, but if we restrain them, they become disciplined. Thus, austerity is the voluntary acceptance of hardships for purifying the body, mind, and intellect.
+
+Straightforwardness. Simplicity in speech and conduct unclutters the mind and engenders the sprouting of noble thoughts. The English phrase “simple living, high thinking” aptly expresses the benefits of the virtue of straightforwardness.
+
+Non-violence. It means not impeding the progressive life of other living beings through thought, word, or deed.
+
+Truthfulness. It means restraining oneself from distorting facts to suit one’s purpose. God is the Absolute Truth, and hence the practice of truthfulness takes us toward him; on the other hand, falsehood, while convenient, takes us away from God.
+
+Absence of anger. The manifestation of anger is a defect of the material mind. It takes place when the desires for happiness are obstructed and things do not turn out how one envisaged. By developing detachment and surrender to the will of God, one overcomes anger.
+
+Renunciation. The entire material energy belongs to God and it is meant for his pleasure. Hence, the opulences of the world are not for one’s enjoyment, but for being utilized in the service of God. To be fixed in this understanding is renunciation.
+
+Peacefulness. The cultivation of virtue requires mental poise. Peacefulness is the ability to retain inner equilibrium despite disturbing external situations.
+
+Restraint from fault-finding. The whole world and everything in it is a mixture of good and bad qualities. Focusing upon defects in others dirties our mind, while focusing upon their virtues purifies it. The nature of a saintly person is to see his or her own defects and observe the virtues of others.
+
+Compassion toward all living beings. As individuals evolve spiritually, they naturally rise above self-centeredness and develop empathy for all living beings. Compassion is the deep sympathy that arises upon seeing the sufferings of others.
+
+Absence of covetousness. Greed is the desire to accumulate more than what one legitimately needs for the maintenance of the body. Under its sway, people acquire huge amounts of wealth and possessions, though they know, that at the time of death, everything will be left behind. Freedom from such covetousness leads to contentment and inner peace.
+
+Gentleness. The disposition of behaving roughly with others arises from insensitivity to their feelings. But as one grows in spiritual stature, one naturally sheds crudeness in behavior. Gentleness is a sign of spiritual refinement.
+
+Modesty. Hrīḥ means “sense of guilt in performing actions contrary to the injunctions of scriptures and society.” The saintly nature is imbued with a ruthless inner conscience that gives one a sense of guilt in committing sinful acts.
+
+Lack of fickleness. We may begin with good intentions, but if we get distracted by temptations and hardships, we cannot complete the journey. Success on the path of virtue comes by unwaveringly pursuing the goal despite all diversions that come on the way.
+
+Vigor. From purity of mind comes a deep inner drive to act according to one’s values and beliefs. Hence, saintly personalities bring immense power and vigor to the tasks they pursue.
+
+Forgiveness or forbearance. This is the ability to tolerate the offences of others, without feeling the need to retaliate. Through forgiveness, one heals the emotional wounds caused by others that would otherwise fester and disturb the mind.
+
+Fortitude. It is the inner strength and determination in pursuing the goal, even when the mind and senses are wearied due to unfavorable circumstances. Most of the important things in the world have been accomplished by people who kept on trying when there seemed to be no hope at all. Sri Aurobindo put this very eloquently: “You have to be more persistent than the difficulty; there is no other way.”
+
+Cleanliness. It refers to both internal and external purity. Virtuous people believe in maintaining external cleanliness because it is conducive to internal purity. George Bernard Shaw said, “Better keep yourself clean and bright; you are the window through which you must see the world.”
+
+Bearing enmity toward none. Bearing enmity toward others poisons our own mind, and this becomes an impediment in the path of spiritual progress. The quality of freedom from hatred toward others is developed by realizing that they are also like us, and God resides in all.
+
+Absence of vanity. Self-praise, boastfulness, ostentation, etc. all stem from pride. Saintly personalities see nothing in themselves to be proud about, but instead, feel gratitude to God for the good qualities they possess. Thus, they refrain from self-aggrandizement.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>त्रिविधं नरकस्येदं द्वारं नाशनमात्मन: |</p>
+                    <p>काम: क्रोधस्तथा लोभस्तस्मादेतत्त्रयं त्यजेत् ||</p>
+            `,
+            meaning: `
+                    <p>There are three gates leading to the hell of self-destruction for the soul—lust, anger, and greed. Therefore, one should abandon all three.</p>
+            `,
+            commentary: `
+                    <p>Shree Krishna now describes the origin of the demoniac disposition, and pinpoints lust, anger, and greed as the three causes for it. Previously, in verse 3.36, Arjun had asked him why people are impelled to commit sin, even unwillingly, as if by force. Shree Krishna had answered that it is lust, which later transforms into anger, and is the all-devouring enemy of the world. Greed is also a transformation of lust, as explained in detail in the commentary of verse 2.62. Together, lust, anger, and greed are the foundations from which the demoniac vices develop. They fester in the mind and make it a suitable ground for all other vices to take root. Consequently, Shree Krishna labels them as gateways to hell, and strongly advices to shun them to avoid self-destruction. Those desirous of welfare should learn to dread these three and carefully avoid their presence in their own personality.</p>
+            `,
+        },
+
+        
+       
+            // Add more slokas as needed
+        ];
+
+        let currentIndex = 0;
+
+        function loadSloka(index) {
+            const slokaText = document.getElementById('sloka-text');
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const sloka = slokas[index];
+
+            slokaText.innerHTML = sloka.text;
+            meaningCommentary.innerHTML = sloka.meaning + '<br>' + sloka.commentary;
+        }
+
+        function changeSloka(direction) {
+            currentIndex = (currentIndex + direction + slokas.length) % slokas.length;
+            loadSloka(currentIndex);
+        }
+
+        function toggleMeaning() {
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const button = document.querySelector('.toggle-button');
+
+            if (meaningCommentary.style.display === 'none' || meaningCommentary.style.display === '') {
+                meaningCommentary.style.display = 'block';
+                button.textContent = 'Hide Meaning & Commentary';
+            } else {
+                meaningCommentary.style.display = 'none';
+                button.textContent = 'Show Meaning & Commentary';
+            }
+        }
+
+        // Load the first sloka on page load
+        window.onload = function() {
+            loadSloka(currentIndex);
+        };
+    </script>
+
+</body>
+</html>

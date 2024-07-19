@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloka Page</title>
+    <link rel="stylesheet" href="page2-styles.css">
+</head>
+<body>
+
+    <div class="background">
+        <div class="content">
+            <div class="sloka-container">
+                <div class="box">
+                    <div class="sloka" id="sloka-text">
+                        <!-- Sloka content will be loaded here -->
+                    </div>
+                    <button class="toggle-button" onclick="toggleMeaning()">Show Meaning & Commentary</button>
+                    <div class="meaning-commentary" id="meaning-commentary">
+                        <!-- Meaning and Commentary content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            <button class="nav-button left" onclick="changeSloka(-1)">&#10094;</button>
+            <button class="nav-button right" onclick="changeSloka(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const slokas = [
+        {
+            text: `
+                    <p>मात्रास्पर्शास्तु कौन्तेय शीतोष्णसुखदु:खदा: |</p>
+                    <p>आगमापायिनोऽनित्यास्तांस्तितिक्षस्व भारत ||</p>
+            `,
+            meaning: `
+                    <p>O son of Kunti, the contact between the senses and the sense objects gives rise to fleeting perceptions of happiness and distress. These are non-permanent, and come and go like the winter and summer seasons. O descendent of Bharat, one must learn to tolerate them without being disturbed.</p>
+            `,
+            commentary: `
+                    <p>The human body houses five senses—the senses of sight, smell, taste, touch, and hearing—and these, in contact with their objects of perception, give rise to sensations of happiness and distress. None of these sensations is permanent. They come and go like the changing seasons. Although cool water provides pleasure in the summer, the same water gives distress in the winter. Thus, both the perceptions of happiness and distress experienced through the senses are transitory. If we permit ourselves to be affected by them, we will sway like a pendulum from side to side. A person of discrimination should practice to tolerate both the feelings of happiness and distress without being disturbed by them.
+
+The technique of Vipassanā, which is the primary technique of self-realization in Buddhism, is based on this principle of tolerance of sense perceptions. Its practice helps eliminate desire, which, as stated in the four noble truths (the truth of suffering, the truth of the origin of suffering, the truth of the cessation of suffering, and the truth of the path leading to the cessation), is the cause of all suffering. This is not surprising considering that Buddhist philosophy is a subset of the vast Vedic philosophy.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>बाह्यस्पर्शेष्वसक्तात्मा विन्दत्यात्मनि यत्सुखम् |</p>
+                    <p>स ब्रह्मयोगयुक्तात्मा सुखमक्षयमश्नुते ||</p>
+            `,
+            meaning: `
+                    <p>Those who are not attached to external sense pleasures realize divine bliss in the self. Being united with God through Yog, they experience unending happiness.</p>
+            `,
+            commentary: `
+                    <p>The Vedic scriptures repeatedly describe God as an ocean of unlimited divine bliss:
+
+ānando brahmeti vyajānāt   (Taittirīya Upaniṣhad 3.6)
+
+“Know God to be bliss.”
+
+kevalānubhavānanda svarūpaḥ parameśhvaraḥ   (Bhagavatam 7.6.23)
+
+“God’s form is made of pure bliss.”
+
+ānanda mātra kara pāda mukhodarādi   (Padma Purāṇ)
+
+“God’s hands, feet, face, stomach, etc. are all made of bliss.”
+
+jo ānand sindhu sukharāsī   (Ramayan)
+
+“God is an ocean of bliss and happiness.”
+
+All these mantras and verses from the scriptures emphasize that divine bliss is the nature of God’s personality.  The yogi, who absorbs the senses, mind, and intellect in God, begins to experience the infinite bliss of God who is seated within</p>
+            `,
+        },
+            // Add more slokas as needed
+        ];
+
+        let currentIndex = 0;
+
+        function loadSloka(index) {
+            const slokaText = document.getElementById('sloka-text');
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const sloka = slokas[index];
+
+            slokaText.innerHTML = sloka.text;
+            meaningCommentary.innerHTML = sloka.meaning + '<br>' + sloka.commentary;
+        }
+
+        function changeSloka(direction) {
+            currentIndex = (currentIndex + direction + slokas.length) % slokas.length;
+            loadSloka(currentIndex);
+        }
+
+        function toggleMeaning() {
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const button = document.querySelector('.toggle-button');
+
+            if (meaningCommentary.style.display === 'none' || meaningCommentary.style.display === '') {
+                meaningCommentary.style.display = 'block';
+                button.textContent = 'Hide Meaning & Commentary';
+            } else {
+                meaningCommentary.style.display = 'none';
+                button.textContent = 'Show Meaning & Commentary';
+            }
+        }
+
+        // Load the first sloka on page load
+        window.onload = function() {
+            loadSloka(currentIndex);
+        };
+    </script>
+
+</body>
+</html>

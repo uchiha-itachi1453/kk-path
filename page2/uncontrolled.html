@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloka Page</title>
+    <link rel="stylesheet" href="page2-styles.css">
+</head>
+<body>
+
+    <div class="background">
+        <div class="content">
+            <div class="sloka-container">
+                <div class="box">
+                    <div class="sloka" id="sloka-text">
+                        <!-- Sloka content will be loaded here -->
+                    </div>
+                    <button class="toggle-button" onclick="toggleMeaning()">Show Meaning & Commentary</button>
+                    <div class="meaning-commentary" id="meaning-commentary">
+                        <!-- Meaning and Commentary content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            <button class="nav-button left" onclick="changeSloka(-1)">&#10094;</button>
+            <button class="nav-button right" onclick="changeSloka(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const slokas = [
+        {
+            text: `
+                    <p>उद्धरेदात्मनात्मानं नात्मानमवसादयेत् |</p>
+                    <p>आत्मैव ह्यात्मनो बन्धुरात्मैव रिपुरात्मन: || </p>
+            `,
+            meaning: `
+                    <p>Elevate yourself through the power of your mind, and not degrade yourself, for the mind can be the friend and also the enemy of the self.</p>
+            `,
+            commentary: `
+                    <p>We are responsible for our own elevation or debasement. Nobody can traverse the path of God-realization for us. Saints and Gurus show us the way, but we have to travel it ourselves. There is a saying in Hindi: ek peḍa do pakṣhī baiṭhe, ek guru ek chelā, apanī karanī guru utare, apanī karanī chelā[v.01] “There are two birds sitting on a tree—one Guru and one disciple. The Guru will descend by his own works, and the disciple will also only be able to climb down by his own karmas.”
+
+We have had innumerable lifetimes before this one, and God-realized Saints were always present on Earth. At any period of time, if the world is devoid of such Saints, then the souls of that period cannot become God-realized. How then can they fulfill the purpose of human life, which is God-realization? Thus, God ensures that God-realized Saints are always present in every era, to guide the sincere seekers and inspire humanity. So, in infinite past lifetimes, many times we must have met God-realized Saints and yet we did not become God-realized. This means that the problem was not lack of proper guidance, but either our reticence in accepting it or working according to it. Thus, we must first accept responsibility for our present level of spirituality, or lack thereof. Only then will we gain the confidence that if we have brought ourselves to our present state, we can also elevate ourselves by our efforts.
+
+When we suffer reversals on the path of spiritual growth, we tend to complain that others have caused havoc to us, and they are our enemies. However, our biggest enemy is our own mind. It is the saboteur that thwarts our aspirations for perfection. Shree Krishna states that, on the one hand, as the greatest benefactor of the soul, the mind has the potential of giving us the most benefit; on the other hand, as our greatest adversary, it also has the potential for causing the maximum harm. A controlled mind can accomplish many beneficial endeavors, whereas an uncontrolled mind can degrade the consciousness with most ignoble thoughts.
+
+In order to be able to use it as a friend, it is important to understand the mind’s nature. Our mind operates at four levels:
+
+Mind: When it creates thoughts, we call it mana, or the mind.
+
+Intellect: When it analyses and decides, we call it buddhi, or intellect.
+
+Chitta: When it gets attached to an object or person, we call it chitta.
+
+Ego: When it identifies with the bodily identifications and becomes proud of things like wealth, status, beauty, and learning, we call it ahankār, or ego.
+
+These are not four separate entities. They are simply four levels of functioning of the one mind. Hence, we may refer to them all together as the mind, or as the mind-intellect, or as the mind-intellect-ego, or as the mind-intellect-chitta-ego. They all refer to the same thing.
+
+The use of the word ego here is different from its connotation in Freudian psychology. Sigmund Freud (1856 – 1939), an Austrian neurologist, proposed the first theory of psychology regarding how the mind works. According to him, the ego is the “real self” that bridges the gap between our untamed desires (Id) and the value system that is learnt during childhood (Superego).
+
+Various scriptures describe the mind in one of these four ways for the purpose of explaining the concepts presented there. They are all referring to the same internal apparatus within us, which is together called antaḥ karaṇ, or the mind. For example:
+
+The Pañchadaśhī refers to all four together as the mind, and states that it is the cause of material bondage.
+
+In the Bhagavad Gita, Shree Krishna repeatedly talks of the mind and the intellect as being two things, and emphasizes the need to surrender both to God.
+
+The Yog Darśhan, while analyzing the different elements of nature, talks of three entities: mind, intellect, and ego.
+
+Shankaracharya, while explaining the apparatus available to the soul, classifies the mind into four—mind, intellect, chitta and ego.
+
+So when Shree Krishna says that we must use the mind to elevate the self, he means we must use the higher mind to elevate the lower mind. In other words, we must use the intellect to control the mind. How this can be done has been explained in detail in verses 2.41 to 2.44 and again in verse 3.43.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>बन्धुरात्मात्मनस्तस्य येनात्मैवात्मना जित: |</p>
+                    <p>अनात्मनस्तु शत्रुत्वे वर्ते तात्मैव शत्रुवत् || </p>
+            `,
+            meaning: `
+                    <p>For those who have conquered the mind, it is their friend. For those who have failed to do so, the mind works like an enemy.</p>
+            `,
+            commentary: `
+                    <p>We dissipate a large portion of our thought power and energy in combating people whom we perceive as enemies and potentially harmful to us. The Vedic scriptures say the biggest enemies—lust, anger, greed, envy, illusion, etc.—reside in our own mind. These internal enemies are even more pernicious than the outer ones. The external demons may injure us for some time, but the demons sitting within our own mind have the ability to make us live in constant wretchedness. We all know people who had everything favorable in the world, but lived miserable lives because their own mind tormented them incessantly through depression, hatred, tension, anxiety, and stress.
+
+The Vedic philosophy lays great emphasis on the ramification of thoughts. Illness is not only caused by viruses and bacteria, but also by the negativities we harbor in the mind. If someone accidentally throws a stone at you, it may hurt for a few minutes, but by the next day, you will probably have forgotten about it. However, if someone says something unpleasant, it may continue to agitate your mind for years. This is the immense power of the thoughts. In the Buddhist scripture, the Dhammapada (1.3), the Buddha also expresses this truth vividly:
+
+“I have been insulted! I have been hurt! I have been beaten! I have been robbed! Misery does not cease in those who harbor such thoughts.
+
+When we nourish hatred in our mind, our negative thoughts do more damage to us than the object of our hatred. It has been very sagaciously stated: “Resentment is like drinking poison and hoping that the other person dies.” The problem is that most people do not even realize that their own uncontrolled mind is causing them so much harm. Hence, Jagadguru Shree Kripaluji Maharaj advises:
+
+mana ko mano shatru usaki sunahu jani kachhu pyare (Sadhan Bhakti Tattva)[v1]
+
+“Dear spiritual aspirant, look on your uncontrolled mind as your enemy. Do not come under its sway.”
+
+However, the same mind has the potential of becoming our best friend, if we bring it under control of the intellect, through spiritual practice. The more powerful an entity is, the greater is the danger of its misuse, and also the greater is the scope for its utilization. Since the mind is such a powerful machine fitted into our bodies, it can work as a two-edged sword. Thus, those who slide to demoniac levels do so because of their own mind while those who attain sublime heights also do so because of their purified minds. Accordingly, Franklin D. Roosevelt, former President of America, expressed this very nicely: “Men are not prisoners of fate, but only prisoners of their own minds.” In this verse, Shree Krishna enlightens Arjun about the potential harm and benefits our mind can bestow upon us. In the following three verses, Shree Krishna describes the symptoms of one who is yog-aru?ha (advanced in Yog).</p>
+            `,
+        },
+        {
+            text: `
+                    <p>यतो यतो निश्चरति मनश्चञ्चलमस्थिरम् |</p>
+                    <p>ततस्ततो नियम्यैतदात्मन्येव वशं नयेत् ||</p>
+            `,
+            meaning: `
+                    <p>Whenever and wherever the restless and unsteady mind wanders, one should bring it back and continually focus it on God.</p>
+            `,
+            commentary: `
+                    <p>Success in meditation is not achieved in a day; the path to perfection is long and arduous. When we sit for meditation with the resolve to focus our mind upon God, we will find that ever so often it wanders off in worldly saṅkalp and vikalp. It is thus important to understand the three steps involved in the process of meditation:
+
+With the intellect’s power of discrimination we decide that the world is not our goal. Hence, we forcefully remove the mind from the world. This requires effort.
+
+Again, with the power of discrimination we understand that God alone is ours, and God-realization is our goal. Hence, we bring the mind to focus upon God. This also requires effort.
+
+The mind comes away from God, and wanders back into the world. This does not require effort, it happens automatically.
+
+When the third step happens by itself, sādhaks often become disappointed, “I tried so hard to focus upon God, but the mind went back into the world.” Shree Krishna asks us not to feel disappointed. He says the mind is fickle and we should be prepared that it will wander off in the direction of its infatuation, despite our best efforts to control it. However, when it does wander off, we should once again repeat steps 1 and 2—take the mind away from the world and bring it back to God. Once again, we will experience that step 3 takes place by itself. We should not lose heart, and again repeat steps 1 and 2.
+
+We will have to do this repeatedly. Then slowly, the mind’s attachment toward God will start increasing. And simultaneously, its detachment from the world will also increase. As this happens, it will become easier and easier to meditate. But in the beginning, we must be prepared for the battle involved in disciplining the mind.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>असंशयं महाबाहो मनो दुर्निग्रहं चलम् |</p>
+                    <p>अभ्यासेन तु कौन्तेय वैराग्येण च गृह्यते || </p>
+            `,
+            meaning: `
+                    <p>Lord Krishna said: O mighty-armed son of Kunti, what you say is correct; the mind is indeed very difficult to restrain. But by practice and detachment, it can be controlled.
+
+</p>
+            `,
+            commentary: `
+                    <p>Shree Krishna responds to Arjun’s comment by calling him Mahābāho, which means “Mighty armed one.” He implies, “O Arjun, you defeated the bravest warriors in battle. Can you not defeat the mind?”
+
+Shree Krishna does not deny the problem, by saying, “Arjun, what nonsense are you speaking? The mind can be controlled very easily.” Rather, he agrees with Arjun’s statement that the mind is indeed difficult to control. However, so many things are difficult to achieve in the world and yet we remain undaunted and move forward. For example, sailors know that the sea is dangerous and the possibility of terrible storms exists. Yet, they have never found those dangers as sufficient reasons for remaining ashore. Hence, Shree Krishna assures Arjun that the mind can be controlled by vairāgya and abhyās.
+
+Vairāgya means detachment. We observe that the mind runs toward the objects of its attachment, toward the direction it has been habituated to running in the past. The elimination of attachment eradicates the unnecessary wanderings of the mind.
+
+Abhyās means practice, or a concerted and persistent effort to change an old habit or develop a new one. Practice is a very important word for sādhaks. In all fields of human endeavor, practice is the key that opens the door to mastery and excellence. Take, for example, a mundane activity such as typing. The first time people begin typing, they are able to type one word in a minute. But after a year’s typing, their fingers fly on the keyboard at the speed of eighty words a minute. This proficiency comes solely through practice. Similarly, the obstinate and turbulent mind has to be made to rest on the lotus feet of the Supreme Lord through abhyās. Take the mind away from the world—this is vairāgya—and bring the mind to rest on God—this is abhyās. Sage Patanjali gives the same instruction:
+
+abhyāsa vairāgyābhyāṁ tannirodhaḥ (Yog Darśhan 1.12)[v26]
+
+“The perturbations of the mind can be controlled by constant practice and detachment.”</p>
+            `,
+        },
+            // Add more slokas as needed
+        ];
+
+        let currentIndex = 0;
+
+        function loadSloka(index) {
+            const slokaText = document.getElementById('sloka-text');
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const sloka = slokas[index];
+
+            slokaText.innerHTML = sloka.text;
+            meaningCommentary.innerHTML = sloka.meaning + '<br>' + sloka.commentary;
+        }
+
+        function changeSloka(direction) {
+            currentIndex = (currentIndex + direction + slokas.length) % slokas.length;
+            loadSloka(currentIndex);
+        }
+
+        function toggleMeaning() {
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const button = document.querySelector('.toggle-button');
+
+            if (meaningCommentary.style.display === 'none' || meaningCommentary.style.display === '') {
+                meaningCommentary.style.display = 'block';
+                button.textContent = 'Hide Meaning & Commentary';
+            } else {
+                meaningCommentary.style.display = 'none';
+                button.textContent = 'Show Meaning & Commentary';
+            }
+        }
+
+        // Load the first sloka on page load
+        window.onload = function() {
+            loadSloka(currentIndex);
+        };
+    </script>
+
+</body>
+</html>

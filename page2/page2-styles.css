@@ -1,0 +1,161 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Garamond', serif;
+    color: #fff;
+    overflow: hidden;
+}
+
+.background {
+    position: relative;
+    height: 100vh;
+    background: url('../images/lord.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: brightness(70%);
+    background-attachment: fixed;
+}
+
+.content {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    text-align: center;
+    z-index: 1;
+}
+
+.sloka-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Adjust height as needed */
+}
+
+.box {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    border: 5px solid #f4a261;
+    position: relative;
+    background-image: url('texture.png'); /* Optional texture image */
+    background-size: cover;
+    width: 100%;
+    max-width: 600px; /* Adjust size as needed */
+    max-height: 100%; /* Ensures the box does not exceed the viewport height */
+    overflow: hidden;
+}
+
+.sloka {
+    font-size: 22px;
+    line-height: 1.6;
+    font-weight: bold;
+    font-family: 'Sanskrit', serif; /* A Sanskrit-inspired font */
+    color: #f4a261;
+    margin-bottom: 10px;
+}
+
+.meaning-commentary {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ddd;
+    display: none; /* Initially hidden */
+    max-height: 300px; /* Adjust based on design */
+    overflow-y: auto; /* Scrollbar for overflow */
+}
+
+/* WebKit-based browsers (Chrome, Safari, Edge) */
+.meaning-commentary::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+.meaning-commentary::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2); /* Track color */
+    border-radius: 10px;
+}
+
+.meaning-commentary::-webkit-scrollbar-thumb {
+    background: #f4a261; /* Scrollbar thumb color */
+    border-radius: 10px;
+}
+
+.meaning-commentary::-webkit-scrollbar-thumb:hover {
+    background: #e76f51; /* Thumb color on hover */
+}
+
+/* Firefox */
+.meaning-commentary {
+    scrollbar-width: thin; /* Thin scrollbar */
+    scrollbar-color: #f4a261 rgba(0, 0, 0, 0.2); /* Thumb and track color */
+}
+
+/* For Edge browsers */
+.meaning-commentary {
+    -ms-overflow-style: scrollbar; /* Scrollbar styling for Edge */
+}
+
+.toggle-button {
+    background-color: #f4a261;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-family: 'Garamond', serif;
+}
+
+.toggle-button:hover {
+    background-color: #e76f51;
+    transform: scale(1.05);
+}
+
+.nav-button {
+    background-color: #f4a261;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-button.left {
+    left: 10px;
+}
+
+.nav-button.right {
+    right: 10px;
+}
+
+.nav-button:hover {
+    background-color: #e76f51;
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    .sloka {
+        font-size: 18px;
+    }
+    
+    .meaning-commentary {
+        font-size: 16px;
+    }
+
+    .toggle-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .nav-button {
+        font-size: 20px;
+        padding: 8px;
+    }
+}

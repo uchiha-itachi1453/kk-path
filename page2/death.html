@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloka Page</title>
+    <link rel="stylesheet" href="page2-styles.css">
+</head>
+<body>
+
+    <div class="background">
+        <div class="content">
+            <div class="sloka-container">
+                <div class="box">
+                    <div class="sloka" id="sloka-text">
+                        <!-- Sloka content will be loaded here -->
+                    </div>
+                    <button class="toggle-button" onclick="toggleMeaning()">Show Meaning & Commentary</button>
+                    <div class="meaning-commentary" id="meaning-commentary">
+                        <!-- Meaning and Commentary content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            <button class="nav-button left" onclick="changeSloka(-1)">&#10094;</button>
+            <button class="nav-button right" onclick="changeSloka(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const slokas = [
+        {
+            text: `
+                    <p>देहिनोऽस्मिन्यथा देहे कौमारं यौवनं जरा |</p>
+                    <p>तथा देहान्तरप्राप्तिर्धीरस्तत्र न मुह्यति ||</p>
+            `,
+            meaning: `
+                    <p>Just as the embodied soul continuously passes from childhood to youth to old age, similarly, at the time of death, the soul passes into another body. The wise are not deluded by this.</p>
+            `,
+            commentary: `
+                    <p>With immaculate logic, Shree Krishna establishes the principle of transmigration of the soul from lifetime to lifetime. He explains that in one lifetime itself, we change bodies from childhood to youth to maturity and then to old age. In fact, modern science informs us that cells within the body undergo regeneration—old cells die away and new ones take their place. It is estimated that within seven years, practically all the cells of the body change. Further, the molecules within the cells change even more rapidly. With every breath we inhale, oxygen molecules are absorbed into our cells via the metabolic processes, and molecules that were heretofore locked within the cells are released as carbon dioxide. Scientists estimate that in one year’s time, about ninety-eight percent of our bodily molecules change. And yet, despite the continual change of the body, we perceive that we are the same person. That is because we are not the material body, but the spiritual soul seated within.
+
+In this verse, the word deha means “the body” and dehi means “possessor of the body,” or the soul. Shree Krishna draws Arjun’s attention to the fact that, since the body is constantly changing, in one lifetime itself, the soul passes through many bodies. Similarly, at the time of death, it passes into another body. Actually, what we term as “death” in worldly parlance is merely the soul discarding its old dysfunctional body, and what we call “birth” is the soul taking on a new body elsewhere. This is the principle of reincarnation.
+
+Most Oriental philosophies accept this concept of reincarnation. It is an integral part of Hinduism, Jainism, and Sikhism. In Buddhism, the Buddha made references to his past lives repeatedly. Many people do not know the extent to which reincarnation was a part of the belief system of the Occidental philosophies as well. In ancient classical Western religious and philosophic circles, famous thinkers such as Pythagoras, Plato, and Socrates accepted reincarnation to be true, and their views were also reflected in Orphism, Hermeticism, Neoplatonism, Manichaenism, and Gnosticism. Within the mainstream Abrahamic faiths, mystics of the three major religions also supported reincarnation. Examples include Jews who studied the Kabbalah, the Christian Cathars, and Muslim Shia sects such as the Alawi Shias and the Druze. For example, amongst Occidental religions, Josephus, the great ancient Jewish historian, used language in his writings that seem to ascribe belief in some form of reincarnation among the Pharisees and Essenes of his day. Certainly the Jewish Kabbalah prescribes to the idea of reincarnation as gilgul neshamot, or the “rolling of the soul.” The great Sufi mystic, Maulana Jalaluddin Rumi declared:
+
+I died out of the stone and I became a plant;
+I died out of the plant and became an animal;
+I died out of the animal and became a man.
+Why then should I fear to die?
+When did I grow less by dying?
+I shall die out of man and shall become an angel!” [v10]
+
+Many of the early Christians believed in the concept of reincarnation. Christian history informs us that, in the 553 AD, the Council of Nicaea, a conclave, was held to discuss the principle of reincarnation, and it was thereafter declared a heresy, apparently to increase the authority of the Church over the lives of the people. Until then, it was commonly accepted. Jesus indirectly proclaimed this doctrine when he told his disciples that John the Baptist was Elijah the Prophet reincarnated (Matthew 11:13-14, Matthew 17:10-13). This is also mentioned in the Old Testament (Malachi 4:5). Origen, the most learned of the Christian Fathers, declared: “Every man receives a body for himself according to his deserts in former lives [v11].” Solomon’s Book of Wisdom says: “To be born in sound body with sound limbs is a reward of the virtues of the past lives.” (Wisdom of Solomon 8:19-20) [v12]
+
+Belief in reincarnation is also found in many tribal societies around the world, in places such as Siberia, West Africa, North America, and Australia. Moving to more recent centuries and civilizations, reincarnation has been affirmed by Rosicrucians, Spiritism, Theosophists, and New Age followers. Even more recently, it has even been studied in serious scientific circles at major universities, exemplified by the works of Dr. Ian Stevenson and Dr. Jim Tucker, both at the University of Virginia.
+
+Without accepting the concept of rebirth, it is difficult to make sense out of the suffering, chaos, and incompleteness of the world, and hence, many famous western thinkers believed in this principle. Virgil and Ovid regarded this doctrine as self-evident. The German philosophers Goethe, Fichte, Schelling, and Lessing accepted it. Amongst the more recent philosophers, Hume, Spencer, and Max Mueller, all recognized it as an incontrovertible doctrine. Among Western poets, Browing, Rosetti, Tennyson, and Wordsworth, to mention just a few, all believed in it.
+
+Shree Krishna has previously declared that the wise do not lament. But the fact remains that we do experience happiness and distress. What is the reason for it? He now explains this concept.</p>
+            `,
+        },
+        ,
+        {
+            text: `
+                    <p>न जायते म्रियते वा कदाचि
+नायं भूत्वा भविता वा न भूय: |</p>
+                    <p>अजो नित्य: शाश्वतोऽयं पुराणो
+न हन्यते हन्यमाने शरीरे ||</p>
+            `,
+            meaning: `
+                    <p>The soul is neither born, nor does it ever die; nor having once existed, does it ever cease to be. The soul is without birth, eternal, immortal, and ageless. It is not destroyed when the body is destroyed.</p>
+            `,
+            commentary: `
+                    <p>The eternal nature of the soul has been established in this verse, which is ever-existing and beyond birth and death. Consequently, it is devoid of the six types of transformations: asti, jāyate, vardhate, vipariṇamate, apakṣhīyate, and vinaśhyati “Existence in the womb, birth, growth, procreation, diminution, and death.” These are transformations of the body, not of the self. What we call as death is merely the destruction of the body, but the immortal self remains unaffected by all bodily changes. This concept has been repeatedly emphasized in the Vedas. The Kaṭhopaniṣhad contains a mantra almost identical to the above verse of the Bhagavad Gita:
+
+na jāyate mriyate vā vipaśhchin nāyaṁ kutaśhchin na babhūva kaśhchit
+
+ajo nityaḥ śhāśhvato ’yaṁ purāṇo na hanyate hanyamāne śharīre (1.2.18) [v25]
+
+“The soul is not born, nor does it die; it did not spring from something, and nothing sprang from it. It is unborn, eternal, immortal, and ageless. It is not destroyed when the body is destroyed.” The Bṛihadāraṇyaka Upaniṣhad states:
+
+sa vā eṣha mahān aja ātmājaro ’maro ’mṛito ’bhayaḥ (4.4.25) [v26]
+
+“The soul is glorious, unborn, deathless, free from old age, immortal, and fearless.”</p>
+            `,
+        },
+        ,
+        {
+            text: `
+                    <p>वासांसि जीर्णानि यथा विहाय
+नवानि गृह्णाति नरोऽपराणि |</p>
+                    <p>तथा शरीराणि विहाय जीर्णा
+न्यन्यानि संयाति नवानि देही ||</p>
+            `,
+            meaning: `
+                    <p>As a person sheds worn-out garments and wears new ones, likewise, at the time of death, the soul casts off its worn-out body and enters a new one.</p>
+            `,
+            commentary: `
+                    <p>Continuing to explain the nature of the soul, Shree Krishna reiterates the concept of rebirth, comparing it to an everyday activity. When garments become torn and useless, we discard them in favor of new ones, but in doing so we do not change ourselves. In the same manner, the soul remains unchanged, when it discards its worn-out body and takes birth in a new body elsewhere.
+
+The Nyāya Darśhan gives the following argument to prove the existence of rebirth:
+
+jātasya harṣhabhayaśhoka sampratipatteḥ (3.1.18) [v27]
+
+It states that if you observe a little baby, you will find it sometimes becomes happy, sometimes sad, and sometimes fearful, without any apparent reason. According to the Nyāya Darśhan, the little baby is remembering its past life, and hence experiencing these emotions. However, as it grows up, the impressions of the present life are imprinted so strongly upon its mind, that they erase most past memories. Besides, the processes of death and birth are also so painful to the soul that they erase a substantial portion of the past life’s memories.
+
+The Nyāya Darśhan gives another argument in support of rebirth: stanyābhilāṣhāt (3.1.21) [v28] It says that a newborn baby has no knowledge of language. How then can a mother teach her baby to suckle her breast when she inserts it in the baby’s mouth? However, the newborn child has drunk milk in infinite past lifetimes, even in animal forms, from the breasts, teats, and udders of innumerable mothers. Hence, when the mother puts her breast in the baby’s mouth, it automatically starts suckling based on past practice.
+
+Without accepting the concept of rebirth, the disparity between human beings becomes inexplicable and irrational. For example, let us suppose one man is blind from birth. If that person asks why he was punished in this way, what logical answer can be given to him? If we say it was a result of his karmas, he may argue that the present life is the only life he has, and therefore, there are no past karmas at the time of birth that should afflict him. If we say it was the will of God, it would also seem implausible, since God is all-merciful and would not unnecessarily want anyone to be blind. The only logical explanation is that the person was born blind as a consequence of karmas from past lives. Thus, from common sense and on the authority of the scriptures we are obliged to believe in the concept of rebirth.</p>
+            `,
+        },
+        ,
+        {
+            text: `
+                    <p>अव्यक्तोऽयमचिन्त्योऽयमविकार्योऽयमुच्यते |</p>
+                    <p>तस्मादेवं विदित्वैनं नानुशोचितुमर्हसि || </p>
+            `,
+            meaning: `
+                    <p>The soul is spoken of as invisible, inconceivable, and unchangeable. Knowing this, you should not grieve for the body.</p>
+            `,
+            commentary: `
+                    <p>Our eyes, made from material energy, can see only material objects. The soul, being divine and beyond the realm of material energy, is invisible to our eyes. Scientists have conducted experiments to perceive its presence. They put a dying person into a glass case and sealed the case, to see whether the departure of the soul would crack the glass. However, the soul left the body without the glass box getting cracked. Being subtle, the soul did not need physical space for its movement.
+
+Being subtler than the material energy, the soul is also inconceivable to our intellect. The Kaṭhopaniṣhad says:
+
+indriyebhyaḥ parā hyarthā arthebhyaśhcha paraṁ manaḥ
+manasastu parā buddhirbhuddherātmā mahān paraḥ (1.3.10) [v29]
+
+“Beyond the senses are the objects of the senses; subtler than the objects of the senses is the mind. Beyond the mind is the intellect; and subtler than the intellect is the soul.” The material intellect can only comprehend material concepts, but can never reach the divine soul by the power of its contemplation. As a result, knowledge of the self requires external sources, which are the scriptures and the Guru.</p>
+            `,
+        },
+        ,
+        {
+            text: `
+                    <p>जातस्य हि ध्रुवो मृत्युर्ध्रुवं जन्म मृतस्य च |</p>
+                    <p>तस्मादपरिहार्येऽर्थे न त्वं शोचितुमर्हसि ||</p>
+            `,
+            meaning: `
+                    <p>Death is certain for one who has been born, and rebirth is inevitable for one who has died. Therefore, you should not lament over the inevitable.</p>
+            `,
+            commentary: `
+                    <p>In English language, there is a popular idiom, “as sure as death.” Benjamin Franklin said: “The only things certain in life are death and taxes.” The most certain thing in life is that we will meet with death one day. Psychologists categorize the fear of death as the biggest fear in life. In Patanjali’s Yog Darśhan too, abhiniveśh, or the instinctive urge to survive at all costs, is mentioned as a trait of the material intellect. But for one who has taken birth, death is inevitable. So when something is inevitable, why lament over it?
+
+The Mahabharat relates an incident regarding this. During the period of their exile in the forest, one day while wandering the five Pandavas were thirsty and came across a well. Yudhishthir asked Bheem to go and fetch water for all of them. When Bheem reached the well, a yakṣha (semi-celestial being) began speaking from inside the well, “I will only let you take the water if you first answer my questions.” Bheem paid no heed and proceeded to draw water. The yakṣha pulled him in. After some time when Bheem did not return, a concerned Yudhishthir sent Arjun to see what was happening and fetch water. When Arjun reached the well, the yakṣha asked him too, “I have already seized your brother. Do not attempt to draw the water unless you can answer all my questions correctly.” Arjun also paid no heed, and the yakṣha pulled him into the well. The other brothers, Nakul and Sahadev, followed him, but met with the same fate. Finally, Yudhishthir himself came to the well. Once again, the yakṣha said, “Answer my questions if you want to drink water from the well, or I will pull you in, just as I have done to your four brothers.” Yudhisthir agreed to answer the questions. The yakṣha was actually the celestial God of death, Yamraj, in disguise. He asked sixty questions, each of which was answered perfectly by Yudhishthir. One of these questions was: kim āśhcharyaṁ? “What is the most surprising thing in this world?” Yudhisthir replied:
+
+ahany ahani bhūtāni gachchhantīha yamālayam
+śheṣhāḥ sthiratvam ichchhanti kimāśhcharyamataḥ param (Mahabharat) [v30]
+
+“At every moment people are dying. Those who are alive are witnessing this phenomenon, and yet they do not think that one day they will also have to die. What can be more astonishing than this?” Shree Krishna explains in this verse that life is inescapably a dead end, and so a wise person does not lament over the inevitable.</p>
+            `,
+        }
+            // Add more slokas as needed
+        ];
+
+        let currentIndex = 0;
+
+        function loadSloka(index) {
+            const slokaText = document.getElementById('sloka-text');
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const sloka = slokas[index];
+
+            slokaText.innerHTML = sloka.text;
+            meaningCommentary.innerHTML = sloka.meaning + '<br>' + sloka.commentary;
+        }
+
+        function changeSloka(direction) {
+            currentIndex = (currentIndex + direction + slokas.length) % slokas.length;
+            loadSloka(currentIndex);
+        }
+
+        function toggleMeaning() {
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const button = document.querySelector('.toggle-button');
+
+            if (meaningCommentary.style.display === 'none' || meaningCommentary.style.display === '') {
+                meaningCommentary.style.display = 'block';
+                button.textContent = 'Hide Meaning & Commentary';
+            } else {
+                meaningCommentary.style.display = 'none';
+                button.textContent = 'Show Meaning & Commentary';
+            }
+        }
+
+        // Load the first sloka on page load
+        window.onload = function() {
+            loadSloka(currentIndex);
+        };
+    </script>
+
+</body>
+</html>

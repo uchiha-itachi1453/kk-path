@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloka Page</title>
+    <link rel="stylesheet" href="page2-styles.css">
+</head>
+<body>
+
+    <div class="background">
+        <div class="content">
+            <div class="sloka-container">
+                <div class="box">
+                    <div class="sloka" id="sloka-text">
+                        <!-- Sloka content will be loaded here -->
+                    </div>
+                    <button class="toggle-button" onclick="toggleMeaning()">Show Meaning & Commentary</button>
+                    <div class="meaning-commentary" id="meaning-commentary">
+                        <!-- Meaning and Commentary content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            <button class="nav-button left" onclick="changeSloka(-1)">&#10094;</button>
+            <button class="nav-button right" onclick="changeSloka(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const slokas = [
+        {
+            text: `
+                    <p>काम एष क्रोध एष रजोगुणसमुद्भव: ||</p>
+                    <p>महाशनो महापाप्मा विद्ध्येनमिह वैरिणम् ||</p>
+            `,
+            meaning: `
+                    <p> The Supreme Lord said: It is lust alone, which is born of contact with the mode of passion, and later transformed into anger. Know this as the sinful, all-devouring enemy in the world.</p>
+            `,
+            commentary: `
+                    <p>The Vedas use the word kām, or lust, not only for sexual desires but also to include all desires for material enjoyment based on the bodily concept of the self. Thus, lust shows itself in many ways—the urge for money, physical cravings, craving for prestige, the drive for power, etc. This lust is only a perverted reflection of love for God, which is the inherent nature of every living being. When the soul associates with the material energy in the form of the body, its divine love for God is transformed into lust, in association with the mode of passion. Since divine love is the highest power of God, its perversion in the material realm, which is lust, is also the most powerful force in worldly activities.
+
+Shree Krishna identifies this “lust” for worldly enjoyment as the cause of sin, as the malignant allure sitting within us. The mode of passion deludes the soul into believing that worldly objects will give satisfaction, and so one creates desires for acquiring them. When desire is satisfied, it gives birth to greed; when it is not satisfied, it gives rise to anger. One commits sins under the influence of all three—lust, greed, and anger. Greed is nothing but intensified desire, while anger is frustrated desire. Hence, Shree Krishna labels lust, or desire, as the root of all evil.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>तस्मात्त्वमिन्द्रियाण्यादौ नियम्य भरतर्षभ |</p>
+                    <p>पाप्मानं प्रजहि ह्येनं ज्ञानविज्ञाननाशनम् || </p>
+            `,
+            meaning: `
+                    <p> Therefore, O best of the Bharatas, in the very beginning bring the senses under control and slay this enemy called desire, which is the embodiment of sin and destroys knowledge and realization.</p>
+            `,
+            commentary: `
+                    <p>Now, Shree Krishna explains how to overcome lust, the root of all evil, which is so pernicious to human consciousness. Having identified the repositories of lust, Shree Krishna asks Arjun, at the outset, to curb the desires of the senses. Permitting them to arise is the cause of our miseries, while eliminating them is the way to peace.
+
+Consider the following example. Ramesh and Dinesh were two fellow students sharing the same room in the hostel. At 10 pm at night, Ramesh developed the desire to smoke cigarettes. He said, “I am getting the urge to smoke.” Dinesh replied, “It is so late at night. Forget about cigarettes and go to sleep.” “No…no…I will not be able to sleep until I puff the tobacco,” said Ramesh. Dinesh went to sleep, but Ramesh went out in search of cigarettes. The shops nearby had closed. It took him two hours until he finally returned to the hostel with the cigarette and had a smoke.
+
+In the morning, Dinesh asked him, “Ramesh, when did you sleep at night?” “At midnight.” “Really! That means you remained agitated for cigarettes for two hours and when you had your puffs, you returned to the same state that you were in at 10 pm.” “What do you mean by that?” asked Ramesh. “Look, at 10 pm you did not have any desire for cigarettes, and you were peaceful. Then you yourself created the desire for them. From 10 pm to midnight, you remained agitated for cigarettes. Finally, when you smoked them, the disease, which you had created, went away, and you got to sleep. I, on the other hand, did not create any desire, and slept peacefully at 10 pm itself.”
+
+In this way, we create desires for the objects of the senses of the body, and then become agitated by them. When we get the cherished object, the disease of our own creation gets eradicated, and we think of it as happiness.” However, if we think of ourselves as the soul and our only purpose is happiness of the soul, then it becomes easier to renounce such material desires. Shree Krishna tells Arjun to bring the senses under control, thereby slaying the lust residing in them. To accomplish this we must use the higher instruments given by God to us, as stated in the next verse.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>एवं बुद्धे: परं बुद्ध्वा संस्तभ्यात्मानमात्मना |</p>
+                    <p>जहि शत्रुं महाबाहो कामरूपं दुरासदम् ||</p>
+            `,
+            meaning: `
+                    <p>Thus knowing the soul to be superior to the material intellect, O mighty armed Arjun, subdue the lower self (senses, mind, and intellect) by the higher self (strength of the soul), and kill this formidable enemy called lust.</p>
+            `,
+            commentary: `
+                    <p>In conclusion, Shree Krishna emphasizes that we should slay this enemy called lust through knowledge of the self. Since the soul is a part of God, it is divine in nature. Thus, the divine bliss it seeks can only be attained from a divine subject, while the objects of the world are all material. These material objects can never fulfill the innate longing of the soul and so it is futile to create desires for them. We must exert and train the intellect to think in this manner, and then use it to control the mind and the senses.
+
+This is explained very beautifully in the Kaṭhopaniṣhad with the help of the model of a chariot:
+
+ātmānagvaṁ rathinaṁ viddhi śharīraṁ rathameva tu
+buddhiṁ tu sārathiṁ viddhi manaḥ pragrahameva cha
+indriyāṇi hayānāhurviṣhayānsteṣhu gocharān
+ātmendriyamanoyuktaṁ bhoktetyāhurmanīṣhiṇaḥ (1.3.3-4) [v21]
+
+The Upaniṣhads say there is a chariot, which has five horses pulling it; the horses have reins in their mouths, which are in the hands of a charioteer; a passenger is sitting at the back of the chariot. Ideally, the passenger should instruct the charioteer, who should then control the reins and guide the horses in the proper direction. However, in this case, the passenger has gone to sleep, and so the horses are holding sway.
+
+In this analogy, the chariot is the body, the horses are the five senses, the reins in the mouth of the horses is the mind, the charioteer is the intellect, and the passenger seated behind is the soul residing in the body. The senses (horses) desire pleasurable things. The mind (reins) is not exercising restraint on the senses (horses). The intellect (charioteer) submits to the pull of the reins (mind). So in the materially bound state, the bewildered soul does not direct the intellect in the proper direction. Thus, the senses decide the direction where the chariot will go. The soul experiences the pleasures of the senses vicariously, but these do not satisfy it. Seated on this chariot, the soul (passenger) is moving around in this material world since eternity.
+
+However, if the soul wakes up to its higher nature and decides to take a proactive role, it can exercise the intellect in the proper direction. The intellect will then govern the lower self—the mind and the senses—and the chariot will move in the direction of eternal welfare. In this way, the higher self (soul) must be used to control the lower self (senses, mind, and, intellect).</p>
+            `,
+        },
+        {
+            text: `
+                    <p>ये हि संस्पर्शजा भोगा दु:खयोनय एव ते |</p>
+                    <p>आद्यन्तवन्त: कौन्तेय न तेषु रमते बुध: ||</p>
+            `,
+            meaning: `
+                    <p>The pleasures that arise from contact with the sense objects, though appearing as enjoyable to worldly-minded people, are verily a source of misery. O son of Kunti, such pleasures have a beginning and an end, so the wise do not delight in them.</p>
+            `,
+            commentary: `
+                    <p>The senses create sensations of pleasure in contact with the sense objects.  The mind, which is like the sixth sense, derives pleasure from honor, praise, circumstances, success, etc.  All these pleasures of body and mind are known as bhog (material enjoyment).  Such worldly pleasures cannot satisfy the soul for the following reasons:
+
+Worldly pleasures are finite, and hence the feeling of deficiency remains inherent in them.  One may feel happiness on becoming a millionaire, but the same millionaire becomes discontented on seeing a billionaire, and thinks, “If only I also had one billion, then I too would be happy.”  In contrast, the bliss of God is infinite, and so it gives complete satisfaction.
+
+Worldly pleasures are temporary.  Once they finish, they again leave one with the feeling of misery.  For example, an alcoholic enjoys the pleasure of drinking alcohol at night, but the next morning, the hangover gives him a splitting headache.  However, the bliss of God is eternal, and once attained, it remains forever.
+
+Worldly pleasures are insentient, and hence they continuously decrease.  When people see a new Academy Award prize-winning movie, they are overjoyed, but if they have to see the movie a second time to give company to a friend, their joy dries up.  And if a second friend insists that they see it a third time, they say, “Give me any punishment, but don’t ask me to see that movie again.”  The pleasure from material objects keeps decreasing as we enjoy it.  In Economics, this is defined as the Law of Diminishing Returns.  But the bliss of God is sentient; it is sat-chit-ānand (eternal ever-fresh divine bliss).  Hence, one can go on chanting the same divine Name of God all day long, and relish ever-new devotional satisfaction in it.
+
+No sane person enjoying a delicious dessert would be willing to give it up and eat mud instead.  Similarly, when one begins to enjoy divine bliss, the mind loses all taste for material pleasures.  Those endowed with the faculty of discrimination understand the above three drawbacks of material pleasures, and restrain their senses from them.   Shree Krishna emphasizes this in the next verse.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>त्रिविधं नरकस्येदं द्वारं नाशनमात्मन: |</p>
+                    <p>काम: क्रोधस्तथा लोभस्तस्मादेतत्त्रयं त्यजेत् ||</p>
+            `,
+            meaning: `
+                    <p>There are three gates leading to the hell of self-destruction for the soul—lust, anger, and greed. Therefore, one should abandon all three.</p>
+            `,
+            commentary: `
+                    <p>Shree Krishna now describes the origin of the demoniac disposition, and pinpoints lust, anger, and greed as the three causes for it. Previously, in verse 3.36, Arjun had asked him why people are impelled to commit sin, even unwillingly, as if by force. Shree Krishna had answered that it is lust, which later transforms into anger, and is the all-devouring enemy of the world. Greed is also a transformation of lust, as explained in detail in the commentary of verse 2.62. Together, lust, anger, and greed are the foundations from which the demoniac vices develop. They fester in the mind and make it a suitable ground for all other vices to take root. Consequently, Shree Krishna labels them as gateways to hell, and strongly advices to shun them to avoid self-destruction. Those desirous of welfare should learn to dread these three and carefully avoid their presence in their own personality.</p>
+            `,
+        },
+            // Add more slokas as needed
+        ];
+
+        let currentIndex = 0;
+
+        function loadSloka(index) {
+            const slokaText = document.getElementById('sloka-text');
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const sloka = slokas[index];
+
+            slokaText.innerHTML = sloka.text;
+            meaningCommentary.innerHTML = sloka.meaning + '<br>' + sloka.commentary;
+        }
+
+        function changeSloka(direction) {
+            currentIndex = (currentIndex + direction + slokas.length) % slokas.length;
+            loadSloka(currentIndex);
+        }
+
+        function toggleMeaning() {
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const button = document.querySelector('.toggle-button');
+
+            if (meaningCommentary.style.display === 'none' || meaningCommentary.style.display === '') {
+                meaningCommentary.style.display = 'block';
+                button.textContent = 'Hide Meaning & Commentary';
+            } else {
+                meaningCommentary.style.display = 'none';
+                button.textContent = 'Show Meaning & Commentary';
+            }
+        }
+
+        // Load the first sloka on page load
+        window.onload = function() {
+            loadSloka(currentIndex);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloka Page</title>
+    <link rel="stylesheet" href="page2-styles.css">
+</head>
+<body>
+
+    <div class="background">
+        <div class="content">
+            <div class="sloka-container">
+                <div class="box">
+                    <div class="sloka" id="sloka-text">
+                        <!-- Sloka content will be loaded here -->
+                    </div>
+                    <button class="toggle-button" onclick="toggleMeaning()">Show Meaning & Commentary</button>
+                    <div class="meaning-commentary" id="meaning-commentary">
+                        <!-- Meaning and Commentary content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            <button class="nav-button left" onclick="changeSloka(-1)">&#10094;</button>
+            <button class="nav-button right" onclick="changeSloka(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const slokas = [
+        {
+            text: `
+                    <p>नास्ति बुद्धिरयुक्तस्य न चायुक्तस्य भावना |</p>
+                    <p>न चाभावयत: शान्तिरशान्तस्य कुत: सुखम् ||</p>
+            `,
+            meaning: `
+                    <p>But an undisciplined person, who has not controlled the mind and senses, can neither have a resolute intellect nor steady contemplation on God. For one who never unites the mind with God there is no peace; and how can one who lacks peace be happy?</p>
+            `,
+            commentary: `
+                    <p>This verse strengthens the conclusion of the previous verse by stating the reverse and negating it. Previously, Shree Krishna said “Know God; know peace.” In this verse, he says “No God; no peace.” A person who has not learnt to discipline the mind and senses can neither meditate upon God nor experience his divine bliss. Without the higher taste, it becomes impossible to renounce the lower taste, and such a person keeps hankering for material happiness, like the bee finds it impossible to renounce the nectar of the flower:
+
+rātrirgamiṣhyati bhaviṣhyati suprabhātaṁ
+bhāsvānudveṣhyati hasiṣhyati paṅkajaśhrīḥ
+evaṁ vichintayati koṣha gate dvirephe
+hā hanta hanta nalinīṁ gaja ujjahāra (Sukti Sudhakar) ][v56]
+
+This popular verse in Sanskrit literature relates a bee’s story. The bee was sitting on a lotus flower, drinking its nectar. As the sun began setting, the petals of the flower began shutting. But the bee was so attached to enjoying the object of its senses that it refused to fly off. It thought, “There is still time for the flower to close. Let me suck some more nectar while I can.” In the same way, we can see old age coming as a sure sign of death, but like the bee, we remain engrossed in enjoying worldly pleasures.
+
+In the meantime, it became dark and the lotus flower closed, trapping the bee. It thought, “Never mind! Let me remain inside my beloved flower for tonight. Tomorrow morning, when its petals open again, I will fly away.” Kāṣhṭha bhedo nipuṇopi sangṛihī kuṇṭhito bhavati padma vibhede [v57] “A bee has the power to cut through wood. But look at the attachment to the sense objects that the bee which can cut through wood is stuck inside the soft petals of the lotus.” In the meantime, an elephant came, broke the lotus from the stem, and swallowed it. The bee along with the lotus went into the stomach of the elephant. The bee was thinking, “My beloved lotus is going somewhere, and I am happily going along with it.” It died shortly thereafter.
+
+Similarly, we humans too remain engrossed in the gratification of the senses, and do not heed to the message of the Saints to engage in devotion to God. Finally, time overtakes us in the form of death. Here, Shree Krishna says that those who refuse to discipline the senses and engage in devotion continue to be rocked by the three-fold miseries of Maya. Material desires are like an itching eczema, and the more we indulge in them, the worse they become. How can we be truly happy in this state of material indulgence?</p>
+            `,
+        },
+        {
+            text: `
+                    <p>विहाय कामान्य: सर्वान्पुमांश्चरति नि:स्पृह: |</p>
+                    <p>निर्ममो निरहङ्कार: स शान्तिमधिगच्छति ||</p>
+            `,
+            meaning: `
+                    <p>That person, who gives up all material desires and lives free from a sense of greed, proprietorship, and egoism, attains perfect peace.</p>
+            `,
+            commentary: `
+                    <p>In this verse, Shree Krishna lists the things that disturb one’s peace, and then asks Arjun to give them up.
+
+Material desires. The moment we harbor a desire, we walk into the trap of greed and anger. Either way, we get trapped. So the path to inner peace does not lie in fulfilling desires, but instead in eliminating them.
+
+Greed. Firstly, greed for material advancement is a great waste of time. Secondly, it is an endless chase. In developed countries, very few people are deprived of enough to eat and wear, and yet they remain disturbed; this is because their hankering is still unsatisfied. Thus, those who possess the wealth of contentment possess one of the biggest treasures of life.
+
+Ego. Most of the quarrels that erupt between people stem from the ego. Mark H McCormack, author of What They Don’t Teach You At Harvard Business School writes: “Most corporate executives are one giant ego, with a couple of arms and legs sticking out.” Statistics reveal that a majority of executives, who lose their jobs in the senior management level, do so not because of professional incompetence, but because of interpersonal issues. The way to peace is not to nurture and increase pride, but to get rid of it.
+
+Proprietorship. The feeling of proprietorship is based upon ignorance because the whole world belongs to God. We came empty-handed in the world, and we will go back empty-handed. How then can we think of worldly things as ours?</p>
+            `,
+        },
+        {
+            text: `
+                    <p>श्रद्धावान् लभते ज्ञानं तत्पर: संयतेन्द्रिय: |</p>
+                    <p>ज्ञानं लब्ध्वा परां शान्तिमचिरेणाधिगच्छति || </p>
+            `,
+            meaning: `
+                    <p>Those whose faith is deep and who have practiced controlling their mind and senses attain divine knowledge. Through such transcendental knowledge, they quickly attain everlasting supreme peace.</p>
+            `,
+            commentary: `
+                    <p>Shree Krishna now introduces the concept of faith in the context of knowledge. Not all spiritual truths are immediately perceptible; some of them can only be experienced after having attained sufficient elevation on the path. If we only accept what we can presently verify or comprehend, we will be bereft of the higher spiritual secrets. Faith helps us accept what we cannot understand at present. Jagadguru Shankaracharya has defined faith as follows:
+
+guru vedānta vākyeṣhu dṛiḍho viśhvāsaḥ śhraddhā [v37]
+
+“Faith means firm confidence in the words of the Guru and the scriptures.” When such faith is placed upon a wrong personality, it can lead to disastrous consequences. But when it is placed on the true Guru, it opens the pathway for eternal welfare.
+
+However, blind faith is not a desirable thing. Before placing it on any Guru, we must use our intellect to confirm that the Guru has realized the Absolute Truth, and he is teaching it in accordance with the eternal Vedic scriptures. Once this is confirmed, then we should strive to deepen our faith in such a Guru, and surrender to God under his guidance. The Shvetashvatar Upaniṣhad states:
+
+yasya deve parā bhaktir yathā deve tathā gurau
+tasyaite kathitā hyarthāḥ prakāśhante mahātmanaḥ
+(6.23)[v38]
+
+“The imports of all the Vedic knowledge is revealed within the hearts of those who engage with unflinching faith in devotion toward Guru and God.”</p>
+            `,
+        },
+        {
+            text: `
+                    <p>भोक्तारं यज्ञतपसां सर्वलोकमहेश्वरम् |</p>
+                    <p>सुहृदं सर्वभूतानां ज्ञात्वा मां शान्तिमृच्छति || </p>
+            `,
+            meaning: `
+                    <p>Having realized Me as the enjoyer of all sacrifices and austerities, the Supreme Lord of all the worlds and the selfless friend of all living beings, My devotee attains peace.</p>
+            `,
+            commentary: `
+                    <p>The ascetic sādhanā, explained in the previous two verses, can lead to ātma jñāna (knowledge of the self).  But brahma jñāna (knowledge of God) requires the grace of God, which comes through devotion.  The words sarva loka maheśhwaram mean “Sovereign Lord of all the worlds,” and suhṛidaṁ sarva-bhūtānāṁ means “benevolent well-wisher of all living beings.”  In this way, He emphasizes that the ascetic path too is consummated in surrender to God, with the knowledge that the Supreme Lord is the enjoyer of all austerities and sacrifices.  Jagadguru Shree Kripaluji Maharaj has put this very nicely:
+
+hari kā viyogī jīva govind rādhe, sañcho yog soī jo hari se milāde
+(Rādhā Govind Geet)
+
+“The soul is disconnected from God since eternity.  True Yog is that which unites the soul with the Lord.”  Hence, no system of Yog is complete without the inclusion of bhakti.
+
+In His “Song of God,” Shree Krishna beautifully includes all the genuine paths of spiritual practice, but each time, at the end He qualifies them by stating that success in these paths also requires bhakti.  For example, He uses this system of presentation in verses 6.46-47, 8.22, 11.53-54, 18.54-55, etc.  Here too, Shree Krishna ends the topic revealing the necessity of devotion.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>वेदेषु यज्ञेषु तप:सु चैव
+दानेषु यत्पुण्यफलं प्रदिष्टम् |</p>
+                    <p>अत्येति तत्सर्वमिदं विदित्वा
+योगी परं स्थानमुपैति चाद्यम् ||</p>
+            `,
+            meaning: `
+                    <p>The yogis, who know this secret, gain merit far beyond the fruits of Vedic rituals, the study of the Vedas, performance of sacrifices, austerities, and charities. Such yogis reach the Supreme Abode.</p>
+            `,
+            commentary: `
+                    <p>In the last verse of this chapter, Shree Krishna declares that: those yogis who follow the path of light reap the fruits of their endeavours beyond any other processes can bestow. He says that even though one may undertake Vedic sacrifices, perform austerities, charity, or accumulate knowledge of the self, but without devotion to God, it is not the path of light. The Ramayan states:
+
+nema dharma āchāra tapa gyāna jagya japa dāna,
+bheṣhaja puni koṭinha nahiṅ roga jāhiṅ harijāna.
+
+“You may engage in good conduct, righteousness, austerities, sacrifices, ashtanga yoga, chanting of mantras, and charity.  But without devotion to God, the mind’s disease of material consciousness will not cease.”
+
+All these good deeds can only reap material rewards, which are temporary. However, devotion to God leads to liberation from the bondage of the material world. Therefore, the yogis who have realized this truth detach their mind from the material world and attach it to God alone. Treading on this path of light, they eventually attain eternal happiness.</p>
+            `,
+        },
+            // Add more slokas as needed
+        ];
+
+        let currentIndex = 0;
+
+        function loadSloka(index) {
+            const slokaText = document.getElementById('sloka-text');
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const sloka = slokas[index];
+
+            slokaText.innerHTML = sloka.text;
+            meaningCommentary.innerHTML = sloka.meaning + '<br>' + sloka.commentary;
+        }
+
+        function changeSloka(direction) {
+            currentIndex = (currentIndex + direction + slokas.length) % slokas.length;
+            loadSloka(currentIndex);
+        }
+
+        function toggleMeaning() {
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const button = document.querySelector('.toggle-button');
+
+            if (meaningCommentary.style.display === 'none' || meaningCommentary.style.display === '') {
+                meaningCommentary.style.display = 'block';
+                button.textContent = 'Hide Meaning & Commentary';
+            } else {
+                meaningCommentary.style.display = 'none';
+                button.textContent = 'Show Meaning & Commentary';
+            }
+        }
+
+        // Load the first sloka on page load
+        window.onload = function() {
+            loadSloka(currentIndex);
+        };
+    </script>
+
+</body>
+</html>

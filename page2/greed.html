@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloka Page</title>
+    <link rel="stylesheet" href="page2-styles.css">
+</head>
+<body>
+
+    <div class="background">
+        <div class="content">
+            <div class="sloka-container">
+                <div class="box">
+                    <div class="sloka" id="sloka-text">
+                        <!-- Sloka content will be loaded here -->
+                    </div>
+                    <button class="toggle-button" onclick="toggleMeaning()">Show Meaning & Commentary</button>
+                    <div class="meaning-commentary" id="meaning-commentary">
+                        <!-- Meaning and Commentary content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            <button class="nav-button left" onclick="changeSloka(-1)">&#10094;</button>
+            <button class="nav-button right" onclick="changeSloka(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const slokas = [
+        {
+            text: `
+                    <p>सत्त्वात्सञ्जायते ज्ञानं रजसो लोभ एव च |</p>
+                    <p>प्रमादमोहौ तमसो भवतोऽज्ञानमेव च ||</p>
+            `,
+            meaning: `
+                    <p> From the mode of goodness arises knowledge, from the mode of passion arises greed, and from the mode of ignorance arise negligence and delusion.</p>
+            `,
+            commentary: `
+                    <p>Having mentioned the variation in the results that accrue from the three guṇas, Shree Krishna now gives the reason for this. Sattva guṇa gives rise to wisdom, which confers the ability to discriminate between right and wrong. It also pacifies the desires of the senses for gratification, and creates a concurrent feeling of happiness and contentment. People influenced by it are inclined toward intellectual pursuits and virtuous ideas. Thus, the mode of goodness promotes wise actions. Rajo guṇa inflames the senses, and puts the mind out of control, sending it into a spin of ambitious desires. The living being is trapped by it and over-endeavors for wealth and pleasures that are meaningless from the perspective of the soul. Tamo guṇa covers the living being with inertia and nescience. Shrouded in ignorance, a person performs wicked and impious deeds and bears consequent results.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>त्रिविधं नरकस्येदं द्वारं नाशनमात्मन: |</p>
+                    <p>काम: क्रोधस्तथा लोभस्तस्मादेतत्त्रयं त्यजेत् || </p>
+            `,
+            meaning: `
+                    <p> There are three gates leading to the hell of self-destruction for the soul—lust, anger, and greed. Therefore, one should abandon all three.</p>
+            `,
+            commentary: `
+                    <p>Shree Krishna now describes the origin of the demoniac disposition, and pinpoints lust, anger, and greed as the three causes for it. Previously, in verse 3.36, Arjun had asked him why people are impelled to commit sin, even unwillingly, as if by force. Shree Krishna had answered that it is lust, which later transforms into anger, and is the all-devouring enemy of the world. Greed is also a transformation of lust, as explained in detail in the commentary of verse 2.62. Together, lust, anger, and greed are the foundations from which the demoniac vices develop. They fester in the mind and make it a suitable ground for all other vices to take root. Consequently, Shree Krishna labels them as gateways to hell, and strongly advices to shun them to avoid self-destruction. Those desirous of welfare should learn to dread these three and carefully avoid their presence in their own personality.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>तदित्यनभिसन्धाय फलं यज्ञतप:क्रिया: |</p>
+                    <p>दानक्रियाश्च विविधा: क्रियन्ते मोक्षकाङ्क्षिभि: || </p>
+            `,
+            meaning: `
+                    <p>Persons who do not desire fruitive rewards, but seek to be free from material entanglements, utter the word “Tat” along with acts of austerity, sacrifice, and charity.</p>
+            `,
+            commentary: `
+                    <p>The fruits of all actions belong to God, and hence, any yajña (sacrifice), tapaḥ (austerity), and dānam (charity), must be consecrated by offering it for the pleasure of the Supreme Lord. Now, Shree Krishna glorifies the sound vibration “Tat,” which refers to Brahman. Chanting Tat along with austerity, sacrifice, and charity symbolizes that they are not to be performed for material rewards, but for the eternal welfare of the soul through God-realization.</p>
+            `,
+        },
+        
+            // Add more slokas as needed
+        ];
+
+        let currentIndex = 0;
+
+        function loadSloka(index) {
+            const slokaText = document.getElementById('sloka-text');
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const sloka = slokas[index];
+
+            slokaText.innerHTML = sloka.text;
+            meaningCommentary.innerHTML = sloka.meaning + '<br>' + sloka.commentary;
+        }
+
+        function changeSloka(direction) {
+            currentIndex = (currentIndex + direction + slokas.length) % slokas.length;
+            loadSloka(currentIndex);
+        }
+
+        function toggleMeaning() {
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const button = document.querySelector('.toggle-button');
+
+            if (meaningCommentary.style.display === 'none' || meaningCommentary.style.display === '') {
+                meaningCommentary.style.display = 'block';
+                button.textContent = 'Hide Meaning & Commentary';
+            } else {
+                meaningCommentary.style.display = 'none';
+                button.textContent = 'Show Meaning & Commentary';
+            }
+        }
+
+        // Load the first sloka on page load
+        window.onload = function() {
+            loadSloka(currentIndex);
+        };
+    </script>
+
+</body>
+</html>

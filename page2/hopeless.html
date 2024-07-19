@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloka Page</title>
+    <link rel="stylesheet" href="page2-styles.css">
+</head>
+<body>
+
+    <div class="background">
+        <div class="content">
+            <div class="sloka-container">
+                <div class="box">
+                    <div class="sloka" id="sloka-text">
+                        <!-- Sloka content will be loaded here -->
+                    </div>
+                    <button class="toggle-button" onclick="toggleMeaning()">Show Meaning & Commentary</button>
+                    <div class="meaning-commentary" id="meaning-commentary">
+                        <!-- Meaning and Commentary content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            <button class="nav-button left" onclick="changeSloka(-1)">&#10094;</button>
+            <button class="nav-button right" onclick="changeSloka(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const slokas = [
+        {
+            text: `
+                    <p>अनन्याश्चिन्तयन्तो मां ये जना: पर्युपासते |</p>
+                    <p>तेषां नित्याभियुक्तानां योगक्षेमं वहाम्यहम् || </p>
+            `,
+            meaning: `
+                    <p> There are those who always think of Me and engage in exclusive devotion to Me. To them, whose minds are always absorbed in Me, I provide what they lack and preserve what they already possess.</p>
+            `,
+            commentary: `
+                    <p>A mother never thinks of deserting her newborn helpless child who is entirely dependent upon her.  The supreme and eternal mother of the soul is God.  In this verse, God offers  motherly assurance to souls who surrender exclusively to Him.  The words used are vahāmi aham, meaning “I personally carry the burden of maintaining My devotees,” just as a married man carries the burden of maintaining his wife and children.  God promises two things.  The first is yog—He bestows His devotees the spiritual assets they do not possess.  The second is kṣhem—He protects the spiritual assets that His devotees already possess.
+
+However, the condition He has placed for this is exclusive surrender.  This can again be understood through the same analogy of the mother and child.  A newborn baby is fully dependent upon its mother, who takes care of the baby’s welfare entirely.  The baby simply cries whenever it needs anything; the mother cleans it, feeds it, bathes it, etc.  But when the baby becomes a five-year old child, it begins doing some actions for itself.  To that extent the mother reduces her responsibilities.  And when the same child becomes a youth and assumes all responsibilities, the mother relinquishes her responsibilities further.  Now if the father comes home and asks, “Where is our son?” the mother replies, “He has not returned home after school.  He must have gone for a movie with his friends.”  Her attitude is now more neutral toward him.  But when the same boy was a five-year old, and had gotten delayed by ten minutes in returning home from school, both the mother and father would begin worrying, “What has happened?  He is a small child.  Let’s hope he has not met with an accident.  Let us phone the school and find out.” 
+
+In this way, as the boy keeps assuming more responsibilities, his mother keeps relinquishing her responsibilities.  God’s law is exactly the same.  When we act from our independent will, thinking that we are the doers of our actions, and depend upon our own prowess and abilities, God does not bestow His grace.  He merely notes our karmas and gives the result.  When we surrender partially to Him and partially depend upon material crutches, God also partially bestows His grace upon us.  And when we offer ourselves exclusively to Him, māmekaṁ śharaṇaṁ vraja, God bestows His complete grace and takes full responsibility, by preserving what we have and providing what we lack.</p>
+            `,
+        },
+        {
+          text: `
+                    <p>मन्मना भव मद्भक्तो मद्याजी मां नमस्कुरु |</p>
+                    <p>मामेवैष्यसि युक्त्वैवमात्मानं मत्परायण: || </p>
+            `,
+          meaning: `
+                    <p> Always think of Me, be devoted to Me, worship Me, and offer obeisance to Me. Having dedicated your mind and body to Me, you will certainly come to Me.
+
+</p>
+            `,
+          commentary: `
+                    <p>Having stressed bhakti, the path of devotion, throughout this chapter, Shree Krishna now concludes it by entreating Arjun to become His devotee.  He asks Arjun to unite his consciousness with God in true Yog, by worshipping Him, engaging the mind in meditation upon His divine form, and offering obeisance in pure humility to Him. 
+
+Namaskuru (the act of humble obeisance) effectively neutralizes vestiges of egotism that may arise in the performance of devotion.  Thus, free from pride, with the heart immersed in devotion, one should dedicate all one’s thoughts and actions to the Supreme.  Shree Krishna assures Arjun that such complete communion with Him through bhakti-yog will definitely result in the attainment of God-realization; of this, there should be no doubt.</p>
+            `,
+        },
+        {
+          text: `
+                    <p>सर्वधर्मान्परित्यज्य मामेकं शरणं व्रज |</p>
+                    <p>अहं त्वां सर्वपापेभ्यो मोक्षयिष्यामि मा शुच: || </p>
+            `,
+          meaning: `
+                    <p>Abandon all varieties of dharmas and simply surrender unto Me alone. I shall liberate you from all sinful reactions; do not fear.
+                        </p>
+            `,
+          commentary: `
+                    <p>All along, Shree Krishna had been asking Arjun to do two things simultaneously—engage his mind in devotion, and engage his body in fulfilling his material duty as a warrior. He thus wanted Arjun not to give up his Kshatriya dharma, but to do devotion alongside with it. This is the principle of karm yog. Now, Shree Krishna reverses this teaching by saying that here is no need to fulfill even material dharma. Arjun can renounce all material duties and simply surrender to God. This is the principle of karm sanyās. Here, one may question that if we give up all our material dharmas will we not incur sin? Shree Krishna tells Arjun not to fear; he will absolve him from all sins, and liberate him from material existence.
+
+To comprehend this instruction of Shree Krishna, we need to understand the term dharma. It comes from the root word dhṛi, which means dhāraṇ karane yogya, or “responsibilities, duties, thoughts, and actions that are appropriate for us.” There are actually two kinds of dharmas—material dharma and spiritual dharma. These two kinds of dharma are based upon two different understandings of the “self.” When we identify ourselves as the body, then our dharma is determined in accordance with our bodily designations, obligations, duties, and norms. Hence, serving the bodily parents, fulfilling the responsibilities to society, nation, etc. are all bodily dharma. This is also called apara dharma or material dharma. This includes the dharma as a Brahmin, Kshatriya, etc. However, when we identify ourselves as the soul, we have no material designations of varṇa (social class) and āśhram (status in life). The soul’s Father, Mother, Friend, Beloved, and resting place are all God. Hence our one and only dharma becomes loving devotional service to God. This is also called para dharma or spiritual dharma.
+
+If one leaves the material dharma it is considered a sin due to dereliction of duty. But if one leaves material dharma and takes the shelter of spiritual dharma, it is not a sin. The Śhrīmad Bhāgavatam states:
+
+devarṣhi-bhūtāpta-nṛiṇāṁ pitṝīṇāṁ na kiṅkaro nāyam ṛiṇī cha rājan
+sarvātmanā yaḥ śharaṇaṁ śharaṇyaṁ gato mukundaṁ parihṛitya kartam (11.5.41)[v37]
+
+This verse explains that for those who do not surrender to God, there are five debts—to the celestial gods, to the sages, to the ancestors, to other humans, and to other living beings. The varṇāśhram system includes various procedures for releasing ourselves from these five kinds of debts. However, when we surrender to God, we are automatically released from all these debts, just as by watering the roots of a tree, all its branches, twigs, leaves, flowers, and fruit automatically get watered. Similarly, by fulfilling our duty to God, we automatically fulfill our duty to everyone. Hence, there is no sin in renouncing material dharma if we are properly situated in spiritual dharma. In fact, the ultimate goal is to engage completely and wholeheartedly in spiritual dharma. The Śhrīmad Bhāgavatam states:
+
+ājñāyaivaṁ guṇān doṣhān mayādiṣhṭān api svakān
+dharmān santyajya yaḥ sarvān māṁ bhajeta sa tu sattamaḥ (11.11.32) [v38]
+
+“I have given innumerable instructions regarding the performance of bodily dharma in the Vedas. But those who realize the shortcomings in these, and renounce all prescribed duties, to simply engage in my devotional service, I consider them to be the best sādhaks.” In the Ramayan, we read how Lakshman renounced all material duties to accompany Lord Ram in the forest. He said:
+
+guru pitu mātu na jānahu kāhū, kahahu subhāū nātha patiyāū
+more sabahiñ eka tumha swāmī, dinabhandhu ura antarayamī [v39]
+
+“O Lord, please believe me, I do not know any teacher, father, mother, etc. As far as I am concerned, you, the savior of the fallen and the knower of the heart, are my Master and my everything.” Similarly, Prahlad said:
+
+mātā nāsti pitā na ’sti na ’sti me swajano janaḥ [v40]
+
+“I do not know any mother, father, or relative (God is everything to me).”
+
+In the Bhagavad Gita, Shree Krishna gave Arjun sequentially higher instructions. Initially, he instructed Arjun to do karm, i.e. his material dharma as a warrior (verse 2.31). But material dharma does not result in God-realization; it leads to the celestial abodes, and once the pious merits are depleted one has to come back. Hence, Shree Krishna next instructed Arjun to do karm yog, i.e. his material dharma with the body and spiritual dharma with the mind. He asked Arjun to fight the war with the body and remember God with the mind (verse 8.7). This instruction of karm yog forms the major portion of the Bhagavad Gita. Now in the very end, Shree Krishna instructs Arjun to practice karm sanyās, i.e. renounce all material dharma and simply adopt spiritual dharma, which is love for God. He should thus fight, not because it is his duty as a warrior, but because God wants him to do so.
+
+But why did Shree Krishna not give this instruction to Arjun earlier? Why did he seem to clearly extol just the reverse in verse 5.2 when he stated karm yog superior as to karm sanyās? Lord Krishna clearly explains this in the next verse.</p>
+            `,
+        },
+        {
+          text: `
+                    <p>यत्र योगेश्वर: कृष्णो यत्र पार्थो धनुर्धर: |</p>
+                    <p>तत्र श्रीर्विजयो भूतिध्रुवा नीतिर्मतिर्मम || </p>
+            `,
+          meaning: `
+                    <p>Wherever there is Shree Krishna, the Lord of all Yog, and wherever there is Arjun, the supreme archer, there will also certainly be unending opulence, victory, prosperity, and righteousness. Of this, I am certain.
+
+</p>
+            `,
+          commentary: `
+                    <p>The Bhagavad Gita concludes with this verse delivering a deep pronouncement. Dhritarashtra was apprehensive of the outcome of the war. Sanjay informs him that material calculations of the relative strengths and numbers of the two armies are irrelevant. There can be only one verdict in this war—victory will always be on the side of God and his pure devotee, and so will goodness, supremacy, and abundance.
+
+God is the independent, self-sustaining sovereign of the world, and the most worthy object of adoration, and worship. na tatsamaśh chābhyadhikaśhcha dṛiśhyate (Śhwetaśhvatar Upaniṣhad 6.8) [v44] “There is no one equal to him; there is no one greater than him.” He merely needs a proper medium to manifest his incomparable glory. The soul who surrenders to him provides such a vehicle for the glory of God to shine forth. Thus, wherever the Supreme Lord and his pure devotee are present, the light of the Absolute Truth will always vanquish the darkness of falsehood. There can be no other outcome.</p>
+            `,
+        },
+        {
+          text: `
+                    <p></p>
+                    <p></p>
+            `,
+          meaning: `
+                    <p></p>
+            `,
+          commentary: `
+                    <p></p>
+            `,
+        },
+            // Add more slokas as needed
+        ];
+
+        let currentIndex = 0;
+
+        function loadSloka(index) {
+            const slokaText = document.getElementById('sloka-text');
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const sloka = slokas[index];
+
+            slokaText.innerHTML = sloka.text;
+            meaningCommentary.innerHTML = sloka.meaning + '<br>' + sloka.commentary;
+        }
+
+        function changeSloka(direction) {
+            currentIndex = (currentIndex + direction + slokas.length) % slokas.length;
+            loadSloka(currentIndex);
+        }
+
+        function toggleMeaning() {
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const button = document.querySelector('.toggle-button');
+
+            if (meaningCommentary.style.display === 'none' || meaningCommentary.style.display === '') {
+                meaningCommentary.style.display = 'block';
+                button.textContent = 'Hide Meaning & Commentary';
+            } else {
+                meaningCommentary.style.display = 'none';
+                button.textContent = 'Show Meaning & Commentary';
+            }
+        }
+
+        // Load the first sloka on page load
+        window.onload = function() {
+            loadSloka(currentIndex);
+        };
+    </script>
+
+</body>
+</html>

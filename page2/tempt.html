@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloka Page</title>
+    <link rel="stylesheet" href="page2-styles.css">
+</head>
+<body>
+
+    <div class="background">
+        <div class="content">
+            <div class="sloka-container">
+                <div class="box">
+                    <div class="sloka" id="sloka-text">
+                        <!-- Sloka content will be loaded here -->
+                    </div>
+                    <button class="toggle-button" onclick="toggleMeaning()">Show Meaning & Commentary</button>
+                    <div class="meaning-commentary" id="meaning-commentary">
+                        <!-- Meaning and Commentary content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            <button class="nav-button left" onclick="changeSloka(-1)">&#10094;</button>
+            <button class="nav-button right" onclick="changeSloka(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const slokas = [
+        {
+            text: `
+                    <p>यततो ह्यपि कौन्तेय पुरुषस्य विपश्चित: |</p>
+                    <p>इन्द्रियाणि प्रमाथीनि हरन्ति प्रसभं मन: || </p>
+            `,
+            meaning: `
+                    <p>The senses are so strong and turbulent, O son of Kunti, that they can forcibly carry away the mind even of a person endowed with discrimination who practices self-control.</p>
+            `,
+            commentary: `
+                    <p>The senses are like wild horses that have been newly harnessed. They are impetuous and reckless, and hence, disciplining them is an important battle that sādhaks have to fight within themselves. Therefore, those desirous of spiritual growth should carefully strive to tame the indulgent senses, which are colored with lust and greed, or else they have the power to sabotage and derail the spiritual process of even the most well-intentioned yogis.
+
+The Śhrīmad Bhāgavatam relates a story that perfectly illustrates this statement (canto 9, chapter 6). There was a great sage in ancient times, known as Saubhari. He is mentioned in the Rig Veda, where there is a mantra called Saubhari Sutra. There is also a scripture called the Saubhari Samhita. So he was not just an ordinary sage. Saubhari had attained such control over his body that he used to submerge himself in the river Yamuna and meditate under water. One day, he saw two fish mating. This sight carried away his mind and senses, and the desire for sexual association arose in him. He abandoned his spiritual practice and came out of the water, wondering how to fulfill his desire.
+
+At that time, the king of Ayodhya was Mandhata, who was a very illustrious and noble ruler. He had fifty daughters, each more beautiful than the other. Saubhari approached the king and asked for the hand of one of the fifty princesses.
+
+King Mandhata wondered about the sanity of the sage and thought to himself, “An old man wanting to get married!” The king knew Saubhari to be a powerful sage, and feared that if he refused, the sage might curse him. But if he consented, the life of one of his daughters would be ruined. He was in a dilemma. So he said, “O holy one! I have no objection to your request. Please take a seat. I shall bring my fifty daughters before you, and whosoever chooses you will become yours in marriage.” The king was confident that none of his daughters would choose the old ascetic, and in this way, he would be saved from the sage’s curse.
+
+Saubhari was all too aware of the king’s intention. He told the king that he would return the following day. That evening, he used his yogic powers to turn himself into a handsome young man. Consequently, when he presented himself at the palace the next day, all the fifty princesses chose him as their husband. The king was bound by the word he had given and was compelled to marry all his daughters to the sage.
+
+Now the king was concerned about the fights that would take place amongst the fifty sisters, since they would have to share a husband. However, Saubhari again used his yogic powers. Putting the king’s apprehension to rest, he assumed fifty forms and created fifty palaces for his wives, and lived separately with each one of them. In this manner, thousands of years passed by. The Puranas state that Saubhari had many children from each of them, and those children had further children, until a tiny city had been created. One day, Saubhari came to his senses, and exclaimed, aho imaṁ paśhyata me vināśhaṁ (Bhāgavatam 9.6.50) [v51] “O humans! Those of you, who make plans to attain happiness through material acquisitions, be careful. Look at my degradation—where I was and where am I now. I created fifty bodies by my yogic powers, and lived with fifty women for thousands of years. And yet, the senses did not experience fulfillment; they only kept hankering for more. Learn from my downfall and be warned not to venture in this direction.”</p>
+            `,
+        },
+        {
+            text: `
+                    <p>तानि सर्वाणि संयम्य युक्त आसीत मत्पर: |</p>
+                    <p>वशे हि यस्येन्द्रियाणि तस्य प्रज्ञा प्रतिष्ठिता ||</p>
+            `,
+            meaning: `
+                    <p>They are established in perfect knowledge, who subdue their senses and keep their minds ever absorbed in Me.</p>
+            `,
+            commentary: `
+                    <p>In this verse, the word yuktaḥ (united) indicates “absorption in devotion,” and mat paraḥ means “toward Lord Krishna.” The word āsīta (seated) may be understood figuratively here to mean “situated or established.” Having said that the impetuous mind and senses need to be tamed, Shree Krishna now reveals the proper engagement for them, which is absorption in devotion to God. The example of King Ambarish in Śhrīmad Bhāgavatam illustrates this process this very beautifully:
+
+sa vai manaḥ kṛiṣhṇa-padāravindayor vacāhṁsi vaikuṇṭha-guṇānuvarṇane
+karau harer mandira-mārjanādiṣhu śhrutiṁ chakārāchyuta-sat-kathodaye
+
+mukunda-liṅgālaya-darśhane dṛiśhau tad-bhṛitya-gātra-sparśhe ’ṅga-saṅgamam
+ghrāṇaṁ cha tat-pāda-saroja-saurabhe śhrīmat-tulasyā rasanāṁ tad-arpite
+
+pādau hareḥ kṣhetra-padānusarpaṇe śhiro hṛiṣhīkeśha-padābhivandane
+kāmaṁ cha dāsye na tu kāma-kāmyayā yathottamaśhloka-janāśhrayā ratiḥ
+(9.4.18-20) [v52] 
+
+“Ambarish engaged his mind in remembering the lotus feet of Shree Krishna. He engaged his tongue in chanting the wonderful names, forms, virtues, and pastimes of God. He used his ears in hearing narrations about the Lord, his eyes in seeing the beautiful deity of God in the temple, his sense of touch in massaging the feet of devotees of the Lord, his nostrils in smelling the aroma from fragrant objects that had been offered to the Lord in worship, his feet in circumambulating the temple, and his head in paying obeisance to God and His devotees. In this way, he subdued all his senses by engaging them in the service of the Supreme Lord.”</p>
+            `,
+        },
+        {
+            text: `
+                    <p>आपूर्यमाणमचलप्रतिष्ठं
+समुद्रमाप: प्रविशन्ति यद्वत् |</p>
+                    <p>तद्वत्कामा यं प्रविशन्ति सर्वे
+स शान्तिमाप्नोति न कामकामी ||</p>
+            `,
+            meaning: `
+                    <p>Just as the ocean remains undisturbed by the incessant flow of waters from rivers merging into it, likewise the sage who is unmoved despite the flow of desirable objects all around him attains peace, and not the person who strives to satisfy desires.</p>
+            `,
+            commentary: `
+                    <p>The ocean is unique in its ability to maintain its undisturbed state, despite being inundated by the incessant flow of rivers into it. All the rivers of the world constantly empty themselves into the oceans, which neither overflow nor get depleted. Shree Krishna uses the word āpūryamāṇaṁ (filled from all sides) to describe that even the rivers pouring all their water during the rainy season into the ocean cannot make it flow over. Similarly, the realized sage remains quiescent and unmoved in both conditions—while utilizing sense objects for bodily necessities, or being bereft of them. Only such a sage can attain śhānti, or true peace.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>दैवी ह्येषा गुणमयी मम माया दुरत्यया |</p>
+                    <p>मामेव ये प्रपद्यन्ते मायामेतां तरन्ति ते || </p>
+            `,
+            meaning: `
+                    <p>My divine energy Maya, consisting of the three modes of nature, is very difficult to overcome. But those who surrender unto Me cross over it easily.</p>
+            `,
+            commentary: `
+                    <p>Some people claim that Maya is mithyā (non-existent).  They say that the material energy Maya is a perception created due to our ignorance, but if someone attains spiritual knowledge, Maya will cease to exist. The soul itself is the Ultimate Reality, and once we understand that, all illusions shall dispel. However, this theory is negated by the Bhagavad Gita in this verse. Shree Krishna has already stated that Maya is an extension of His energy and not an illusion. The Śhwetāśhvatar Upaniṣhad also states:
+
+ māyāṁ tu prakṛitiṁ vidyānmāyinaṁ tu maheśhvaram   (4.10)
+
+“Maya is the energy (prakṛiti), while God is the Energetic.” 
+
+The Ramayan states:      
+
+so dāsī raghubīra ki samujheṅ mithyā sopi
+
+“Some people think Maya is mithyā (non-existent), but factually it is an energy engaged in the service of God.” 
+
+Shree Krishna has mentioned here that because Maya is His energy, it is difficult to overcome. If someone claims they have defeated Maya, that would mean they have defeated God. No one can conquer God; therefore, Maya is equally invincible. The human mind is made of Maya merely by self-effort no yogi, jñānī, ascetic, or karmī can successfully control the mind.
+
+ 
+
+One could then ask, “Is it impossible to overcome Maya?” The second line of this verse has the answer to this question. Shree Krishna says, “Those who surrender themselves to Me, the Supreme Lord, then by My grace, they would smoothly cross the ocean of material existence. I will instruct Maya to leave this soul, now that it has become Mine.” On God’s instructions Maya, the material energy of God, simply releases the surrendered soul from its clutches. It says, “My job is to keep troubling the soul until it surrenders at the feet of God; once the soul reaches there, my job is complete.”
+
+Here is an example from everyday life. Assume that you visit a friend who has a large house, outside on the gate, a board says, “Beware of dog.” When you look inside, a trained guard dog is standing on the lawn. As soon as it spots you, it starts growling menacingly, scared; you decide to take the back gate. But even before you reach the back of the house, it is waiting there for you and snarls furiously, as if saying, “You dare step into this house.” You have no choice, and you shout your friend’s name aloud. Hearing all the commotion, your friend comes and finds you at the gate troubled by his dog. He sternly says to the dog, “No, Tommy, that is a friend, we need to let him in, come and sit down here.” Hearing his master’s command, the dog silently goes and sits near him. You can now open the gate and let yourself in without fear.
+
+In the same way, we are in the clutches of Maya, the material energy. Although it is subservient to God, it keeps troubling us so that we keep moving towards God. By our own efforts, we cannot defeat Maya; only when we surrender completely to God, by His grace, we can cross the ocean of material existence. The next question in our mind would be, “If it is so easy to defeat Maya, then why is it that most of us fail?” Shree Krishna has elaborated on that in the next verse.</p>
+            `,
+        },
+            // Add more slokas as needed
+        ];
+
+        let currentIndex = 0;
+
+        function loadSloka(index) {
+            const slokaText = document.getElementById('sloka-text');
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const sloka = slokas[index];
+
+            slokaText.innerHTML = sloka.text;
+            meaningCommentary.innerHTML = sloka.meaning + '<br>' + sloka.commentary;
+        }
+
+        function changeSloka(direction) {
+            currentIndex = (currentIndex + direction + slokas.length) % slokas.length;
+            loadSloka(currentIndex);
+        }
+
+        function toggleMeaning() {
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const button = document.querySelector('.toggle-button');
+
+            if (meaningCommentary.style.display === 'none' || meaningCommentary.style.display === '') {
+                meaningCommentary.style.display = 'block';
+                button.textContent = 'Hide Meaning & Commentary';
+            } else {
+                meaningCommentary.style.display = 'none';
+                button.textContent = 'Show Meaning & Commentary';
+            }
+        }
+
+        // Load the first sloka on page load
+        window.onload = function() {
+            loadSloka(currentIndex);
+        };
+    </script>
+
+</body>
+</html>

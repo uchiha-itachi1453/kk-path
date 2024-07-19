@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloka Page</title>
+    <link rel="stylesheet" href="page2-styles.css">
+</head>
+<body>
+
+    <div class="background">
+        <div class="content">
+            <div class="sloka-container">
+                <div class="box">
+                    <div class="sloka" id="sloka-text">
+                        <!-- Sloka content will be loaded here -->
+                    </div>
+                    <button class="toggle-button" onclick="toggleMeaning()">Show Meaning & Commentary</button>
+                    <div class="meaning-commentary" id="meaning-commentary">
+                        <!-- Meaning and Commentary content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            <button class="nav-button left" onclick="changeSloka(-1)">&#10094;</button>
+            <button class="nav-button right" onclick="changeSloka(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const slokas = [
+        {
+            text: `
+                    <p>सर्वस्य चाहं हृदि सन्निविष्टो मत्त: स्मृतिर्ज्ञानमपोहनं च |</p>
+                    <p>वेदैश्च सर्वैरहमेव वेद्यो वेदान्तकृद्वेदविदेव चाहम् || </p>
+            `,
+            meaning: `
+                    <p>I am seated in the hearts of all living beings, and from Me come memory, knowledge, as well as forgetfulness. I alone am to be known by all the Vedas, am the author of the Vedant, and the knower of the meaning of the Vedas.
+
+</p>
+            `,
+            commentary: `
+                    <p>In this verse, Lord Shree Krishna says that He has bestowed upon us this amazing ability of memory and knowledge. While the mind and the intellect are like software; the brain can be considered hardware. Yet this mechanism of the brain is way beyond human understanding.
+
+Although there is vast development in technology, there are many areas where the scientific community is still struggling. For example, surgeons who perform brain transplant get delighted with their feat; but do not fully understand its functions. Another example is of face-recognition technology. It is remarkable that humans can very easily recognize someone they meet after several years, even though there are many changes in their looks. Whereas, present-day computers sometimes cannot even recognize unchanged faces. How amazing it is that while the scanner software finds it difficult to read even typewritten text; humans can read even sketchy handwritings, without much effort. Such are the mysteries of the human brain which the Supreme Lord has created. 
+
+Shree Krishna says that He has also given us this power of forgetting the past. Similar to how unwanted records are deleted from a computer, living beings wipe off unwanted memories. Else there would be an information overload. 
+
+Uddhav says to Shree Krishna:  
+
+tvatto jñānaṁ hi jīvānāṁ pramoṣhas te ’tra śhaktitaḥ  (Bhagavatam 11.22.28)
+
+“From You alone, the knowledge of the living being arises, and by Your potency that knowledge is stolen away.” 
+
+Other than the internal knowledge that we carry, there is another source of knowledge; that is from the scriptures. In this verse, the Lord has further revealed his glories in regards to the manifestation of the Vedas; that he is the creator, knower, and writer of the Vedas. God is divine and all his creations, including the Vedas, are divine. He alone is the knower of their true meaning; and only by his grace can a fortunate soul know the Vedas. Ved Vyas the author of the Vedānt Darśhan is considered to be an avatar of God. And Shree Krishna has specifically mentioned that he is the author of the Vedānt. 
+
+Eventually, He says that although the Vedas give out numerous instructions both material and spiritual, the final objective of all knowledge is to know Him. The purpose of the rituals and ceremonies instructed are to lure people back from the material world towards spirituality. They act as an intermediate step to detach them from their materialistic mindset and direct them towards God. 
+
+The Kaṭhopaniṣhad (1.2.15) states: sarve vedā yat padamāmananti  “All the Vedic mantras are actually pointing towards God.” Memorizing and reciting the Vedic mantras in proper meter, following all the rituals, meditating or even awakening the kuṇḍalinī power; all will be worthless if we do not know God. Only those who have learned to truly love God, have understood the real teachings of all the Vedic scriptures. 
+
+Jagadguru Shree Kripaluji Maharaj states: 
+
+sarva śhāstra sāra yaha govind rādhe, āṭhoṅ yām mana hari guru meṅ lagā de  (Rādhā Govind Geet) 
+
+“The essence of all the scriptures is to engage your mind day and night in loving devotion to God and Guru.” 
+
+In the next two verses, Shree Krishna has described the terms kṣhar, akṣhar, and Puruṣhottam and given proper perspective to the knowledge revealed so far.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>ईश्वर: सर्वभूतानां हृद्देशेऽर्जुन तिष्ठति |</p>
+                    <p>भ्रामयन्सर्वभूतानि यन्त्रारूढानि मायया || </p>
+            `,
+            meaning: `
+                    <p>The Supreme Lord dwells in the hearts of all living beings, O Arjun. According to their karmas, He directs the wanderings of the souls, who are seated on a machine made of material energy.</p>
+            `,
+            commentary: `
+                    <p>Emphasizing the dependence of the soul upon God, Shree Krishna says, “Arjun, whether you choose to obey me or not, your position will always remain under my dominion. The body in which you reside is a machine made from my material energy. Based upon your past karmas, I have given you the kind of body you deserved. I too am seated in it, and am noting all your thoughts, words, and deeds. So, I will also judge whatever you do in the present, to decide your future. Do not think you are independent of me in any condition. Hence Arjun, it is in your self-interest to surrender to me.”</p>
+            `,
+        }
+        
+            // Add more slokas as needed
+        ];
+
+        let currentIndex = 0;
+
+        function loadSloka(index) {
+            const slokaText = document.getElementById('sloka-text');
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const sloka = slokas[index];
+
+            slokaText.innerHTML = sloka.text;
+            meaningCommentary.innerHTML = sloka.meaning + '<br>' + sloka.commentary;
+        }
+
+        function changeSloka(direction) {
+            currentIndex = (currentIndex + direction + slokas.length) % slokas.length;
+            loadSloka(currentIndex);
+        }
+
+        function toggleMeaning() {
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const button = document.querySelector('.toggle-button');
+
+            if (meaningCommentary.style.display === 'none' || meaningCommentary.style.display === '') {
+                meaningCommentary.style.display = 'block';
+                button.textContent = 'Hide Meaning & Commentary';
+            } else {
+                meaningCommentary.style.display = 'none';
+                button.textContent = 'Show Meaning & Commentary';
+            }
+        }
+
+        // Load the first sloka on page load
+        window.onload = function() {
+            loadSloka(currentIndex);
+        };
+    </script>
+
+</body>
+</html>

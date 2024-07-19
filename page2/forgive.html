@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloka Page</title>
+    <link rel="stylesheet" href="page2-styles.css">
+</head>
+<body>
+
+    <div class="background">
+        <div class="content">
+            <div class="sloka-container">
+                <div class="box">
+                    <div class="sloka" id="sloka-text">
+                        <!-- Sloka content will be loaded here -->
+                    </div>
+                    <button class="toggle-button" onclick="toggleMeaning()">Show Meaning & Commentary</button>
+                    <div class="meaning-commentary" id="meaning-commentary">
+                        <!-- Meaning and Commentary content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            <button class="nav-button left" onclick="changeSloka(-1)">&#10094;</button>
+            <button class="nav-button right" onclick="changeSloka(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const slokas = [
+        {
+            text: `
+                    <p>तस्मात्प्रणम्य प्रणिधाय कायं प्रसादये त्वामहमीशमीड्यम् |</p>
+                    <p>पितेव पुत्रस्य सखेव सख्यु: प्रिय: प्रियायार्हसि देव सोढुम् || </p>
+            `,
+            meaning: `
+                    <p>Therefore, O adorable Lord, bowing deeply and prostrating before You, I implore You for Your grace. As a father tolerates his son, a friend forgives his friend, and a lover pardons the beloved, please forgive me for my offences.</p>
+            `,
+            commentary: `
+                    <p>Considering his behavior as transgressions toward God, Arjun is asking for pardon. While interacting with Shree Krishna—playing, eating, jesting, talking, and resting—he did not show the respect that is appropriate toward the Supreme Almighty. However, no one minds transgressions when they are made because of a high level of intimacy shared with the other person. No government officer has the privilege to joke with the President of a country. Yet, the President’s personal friend, teases him, jests with him, and even scolds him. The President does not mind, rather he values that jest of an intimate friend more than all the respect he receives from his subordinate officers. Thousands of people salute an army general, but they are not as dear to his heart as his wife, who sits intimately by his side. Similarly, Arjun’s intimate dealings with Shree Krishna were not transgressions; they were gestures of the depth of his loving devotion in the sentiment of being a friend. Yet, a devotee is by nature humble, and so, out of humility, he feels that he may have committed transgressions, and hence he is asking for forgiveness.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>अद्वेष्टा सर्वभूतानां मैत्र: करुण एव च |</p>
+                    <p>निर्ममो निरहङ्कार: समदु:खसुख: क्षमी || </p>
+                    <p>सन्तुष्ट: सततं योगी यतात्मा दृढनिश्चय: |</p>
+                    <p>मय्यर्पितमनोबुद्धिर्यो मद्भक्त: स मे प्रिय: ||</p>
+            `,
+            meaning: `
+                    <p>Those devotees are very dear to Me who are free from malice toward all living beings, who are friendly, and compassionate. They are free from attachment to possessions and egotism, equipoised in happiness and distress, and ever-forgiving. They are ever-content, steadily united with Me in devotion, self-controlled, of firm resolve, and dedicated to Me in mind and intellect.</p>
+            `,
+            commentary: `
+                    <p>Having stated that devotion to His personal form is the best, Shree Krishna now goes on to explain in verses 13 to 19, the qualities of His loving devotees. 
+
+Free from malice toward all living beings.  The devotees realize that all living beings are tiny parts of God.  If they harbor envy toward others, it is tantamount to harboring envy toward God Himself.  So the devotees are free from malice even toward those who are inimical toward them.
+
+Friendly and compassionate.  Devotion engenders the feeling of unity amongst all living beings by virtue of their being children of the one God.  The notion of seeing others as alien to oneself is wiped out.  This leads to the growth of affability in the devotees and sympathy toward the sufferings of others.
+
+Free from attachment to possessions and egotism.  The biggest enemy of devotion is pride.  One can only progress on the spiritual path if one practices self-effacement.  Proficient devotees naturally become humble and eliminate pride and proprietorship from their personality, as well as the false identification of being the body.
+
+Equipoised in happiness and distress.  Devotees have faith that only efforts are in their hands, while the results are in the hands of God.  So whatever results come their way, they see them as the will of God, and accept them with equanimity.
+
+Ever forgiving.  Devotees never think of punishing wrongdoers for their emotional satisfaction.  Harboring such negative thoughts toward others ruins one’s own devotion.  So accomplished devotees refuse to harbor unforgiving thoughts in all circumstances and leave the task of punishing wrongdoers upon God.
+
+Ever contented.  Contentment comes not from increasing our possessions, but by decreasing our wants.  Devotees no longer look upon material objects as the source of pleasure, and thus are content with whatever they get. 
+
+Steadily united with Me in devotion.  As explained previously, “Yog” means union.  Devotees are yogis because their consciousness is absorbed in God.  This absorption is not occasional or intermittent, but steady and constant because they are established in their relationship with God.
+
+Self-controlled.  Devotees attach their mind to God in loving devotion.  It is thus detached from the world, and this gives them mastery over their mind and senses.
+
+Firm in conviction.  The quality of determination comes from possessing a resolute intellect.  Since devotees tie their intellect to the knowledge of the scriptures and the instructions of the Guru, it becomes so resolute that even if the whole world tries to convince them otherwise, they do not budge an inch from their position.
+
+Dedicated to Me in mind and intellect.  The soul is a servant of God by its inherent nature, and as we become enlightened with this knowledge, we naturally dedicate ourselves to the Supreme Lord.  In this surrender, the mind and intellect are of primary importance.  When they are devoted to God, the rest of the personality—body, working senses, knowledge senses, worldly possessions, and soul—naturally get dedicated in His service.  Shree Krishna says that devotees who exhibit these qualities are very dear to Him.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>  अभयं सत्त्वसंशुद्धिर्ज्ञानयोगव्यवस्थिति: |</p>
+                    <p>  दानं दमश्च यज्ञश्च स्वाध्यायस्तप आर्जवम् || </p>
+                    <p>  अहिंसा सत्यमक्रोधस्त्याग: शान्तिरपैशुनम् |</p>
+                    <p>  दया भूतेष्वलोलुप्त्वं मार्दवं ह्रीरचापलम् || </p>
+                    <p>  तेज: क्षमा धृति: शौचमद्रोहोनातिमानिता |</p>
+                    <p> भवन्ति सम्पदं दैवीमभिजातस्य भारत || </p>
+            `,
+            meaning: `
+                    <p>The Supreme Divine Personality said: O scion of Bharat, these are the saintly virtues of those endowed with a divine nature—fearlessness, purity of mind, steadfastness in spiritual knowledge, charity, control of the senses, sacrifice, study of the sacred books, austerity, and straightforwardness; non-violence, truthfulness, absence of anger, renunciation, peacefulness, restraint from fault-finding, compassion toward all living beings, absence of covetousness, gentleness, modesty, and lack of fickleness; vigor, forgiveness, fortitude, cleanliness, bearing enmity toward none, and absence of vanity.</p>
+            `,
+            commentary: `
+                    <p>Here, Shree Krishna describes twenty-six virtues of a saintly nature. These should be cultivated as a part of our spiritual practice for elevating ourselves to the supreme goal.
+
+Fearlessness. It is the state of freedom from concern for present and future miseries. Inordinate attachment of any kind causes fear. Attachment to wealth leads to dread of impoverishment, attachment to social prestige causes fear of infamy, attachment to vice leads to anxiety about the consequences of sin, attachment to bodily comfort causes the fear of ill-health, and so on. Detachment and surrender to God vanquish all fear from the heart.
+
+Purity of mind. This is the state of inner cleanliness. The mind generates and harbors thoughts, sentiments, feelings, emotions, etc. When these are ethical, wholesome, positive, and uplifting, the mind is considered pure, and when they are unethical and degrading, the mind is considered impure. Attachment to objects in the modes of passion and ignorance contaminate the mind, while attachment to God purifies it.
+
+Steadfastness in spiritual knowledge. It is said: tattva vismaraṇāt bhekivat [v1] “When human beings forget what is right and what is wrong they become like animals.” Thus, the path of virtue is forged by remaining steadfast in the awareness of spiritual principles.
+
+Charity. It refers to the giving away of one’s possessions for a good cause or to needy persons. True charity is that which is done, not with a feeling of superiority, but with a sense of gratefulness to God for the opportunity to help. Material charity, done for the welfare of the body, helps others temporarily. Spiritual charity, done at the platform of the soul, helps eliminate the cause of all suffering, which is separation from God. Consequently, it is considered higher than material charity.
+
+Control of the senses. The senses are notorious in their ability to drag the mind deeper into material illusion. They tempt the living being to seek immediate gratification. However, walking the path of virtue requires forsaking the lower sensual pleasures for achieving the higher goal. Thus, restraint of the senses is an essential virtue for treading the path to God.
+
+Sacrifice. It means executing one’s Vedic duties and social obligations, even though they may not be enjoyable. Sacrifice is considered perfect when it is done for the pleasure of God.
+
+Study of the sacred books. An important aspect of cultivating the divine nature is to feed the intellect with uplifting knowledge from the scriptures. When the intellect is illumined with proper knowledge, one’s actions naturally become sublime.
+
+Austerity. The body-mind-senses are such that, if we pamper them, they become pleasure-seeking, but if we restrain them, they become disciplined. Thus, austerity is the voluntary acceptance of hardships for purifying the body, mind, and intellect.
+
+Straightforwardness. Simplicity in speech and conduct unclutters the mind and engenders the sprouting of noble thoughts. The English phrase “simple living, high thinking” aptly expresses the benefits of the virtue of straightforwardness.
+
+Non-violence. It means not impeding the progressive life of other living beings through thought, word, or deed.
+
+Truthfulness. It means restraining oneself from distorting facts to suit one’s purpose. God is the Absolute Truth, and hence the practice of truthfulness takes us toward him; on the other hand, falsehood, while convenient, takes us away from God.
+
+Absence of anger. The manifestation of anger is a defect of the material mind. It takes place when the desires for happiness are obstructed and things do not turn out how one envisaged. By developing detachment and surrender to the will of God, one overcomes anger.
+
+Renunciation. The entire material energy belongs to God and it is meant for his pleasure. Hence, the opulences of the world are not for one’s enjoyment, but for being utilized in the service of God. To be fixed in this understanding is renunciation.
+
+Peacefulness. The cultivation of virtue requires mental poise. Peacefulness is the ability to retain inner equilibrium despite disturbing external situations.
+
+Restraint from fault-finding. The whole world and everything in it is a mixture of good and bad qualities. Focusing upon defects in others dirties our mind, while focusing upon their virtues purifies it. The nature of a saintly person is to see his or her own defects and observe the virtues of others.
+
+Compassion toward all living beings. As individuals evolve spiritually, they naturally rise above self-centeredness and develop empathy for all living beings. Compassion is the deep sympathy that arises upon seeing the sufferings of others.
+
+Absence of covetousness. Greed is the desire to accumulate more than what one legitimately needs for the maintenance of the body. Under its sway, people acquire huge amounts of wealth and possessions, though they know, that at the time of death, everything will be left behind. Freedom from such covetousness leads to contentment and inner peace.
+
+Gentleness. The disposition of behaving roughly with others arises from insensitivity to their feelings. But as one grows in spiritual stature, one naturally sheds crudeness in behavior. Gentleness is a sign of spiritual refinement.
+
+Modesty. Hrīḥ means “sense of guilt in performing actions contrary to the injunctions of scriptures and society.” The saintly nature is imbued with a ruthless inner conscience that gives one a sense of guilt in committing sinful acts.
+
+Lack of fickleness. We may begin with good intentions, but if we get distracted by temptations and hardships, we cannot complete the journey. Success on the path of virtue comes by unwaveringly pursuing the goal despite all diversions that come on the way.
+
+Vigor. From purity of mind comes a deep inner drive to act according to one’s values and beliefs. Hence, saintly personalities bring immense power and vigor to the tasks they pursue.
+
+Forgiveness or forbearance. This is the ability to tolerate the offences of others, without feeling the need to retaliate. Through forgiveness, one heals the emotional wounds caused by others that would otherwise fester and disturb the mind.
+
+Fortitude. It is the inner strength and determination in pursuing the goal, even when the mind and senses are wearied due to unfavorable circumstances. Most of the important things in the world have been accomplished by people who kept on trying when there seemed to be no hope at all. Sri Aurobindo put this very eloquently: “You have to be more persistent than the difficulty; there is no other way.”
+
+Cleanliness. It refers to both internal and external purity. Virtuous people believe in maintaining external cleanliness because it is conducive to internal purity. George Bernard Shaw said, “Better keep yourself clean and bright; you are the window through which you must see the world.”
+
+Bearing enmity toward none. Bearing enmity toward others poisons our own mind, and this becomes an impediment in the path of spiritual progress. The quality of freedom from hatred toward others is developed by realizing that they are also like us, and God resides in all.
+
+Absence of vanity. Self-praise, boastfulness, ostentation, etc. all stem from pride. Saintly personalities see nothing in themselves to be proud about, but instead, feel gratitude to God for the good qualities they possess. Thus, they refrain from self-aggrandizement.</p>
+            `,
+        },
+        
+       
+            // Add more slokas as needed
+        ];
+
+        let currentIndex = 0;
+
+        function loadSloka(index) {
+            const slokaText = document.getElementById('sloka-text');
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const sloka = slokas[index];
+
+            slokaText.innerHTML = sloka.text;
+            meaningCommentary.innerHTML = sloka.meaning + '<br>' + sloka.commentary;
+        }
+
+        function changeSloka(direction) {
+            currentIndex = (currentIndex + direction + slokas.length) % slokas.length;
+            loadSloka(currentIndex);
+        }
+
+        function toggleMeaning() {
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const button = document.querySelector('.toggle-button');
+
+            if (meaningCommentary.style.display === 'none' || meaningCommentary.style.display === '') {
+                meaningCommentary.style.display = 'block';
+                button.textContent = 'Hide Meaning & Commentary';
+            } else {
+                meaningCommentary.style.display = 'none';
+                button.textContent = 'Show Meaning & Commentary';
+            }
+        }
+
+        // Load the first sloka on page load
+        window.onload = function() {
+            loadSloka(currentIndex);
+        };
+    </script>
+
+</body>
+</html>

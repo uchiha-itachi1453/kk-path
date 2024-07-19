@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloka Page</title>
+    <link rel="stylesheet" href="page2-styles.css">
+</head>
+<body>
+
+    <div class="background">
+        <div class="content">
+            <div class="sloka-container">
+                <div class="box">
+                    <div class="sloka" id="sloka-text">
+                        <!-- Sloka content will be loaded here -->
+                    </div>
+                    <button class="toggle-button" onclick="toggleMeaning()">Show Meaning & Commentary</button>
+                    <div class="meaning-commentary" id="meaning-commentary">
+                        <!-- Meaning and Commentary content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            <button class="nav-button left" onclick="changeSloka(-1)">&#10094;</button>
+            <button class="nav-button right" onclick="changeSloka(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const slokas = [
+        {
+            text: `
+                    <p>दम्भो दर्पोऽभिमानश्च क्रोध: पारुष्यमेव च |</p>
+                    <p>अज्ञानं चाभिजातस्य पार्थ सम्पदमासुरीम् || </p>
+            `,
+            meaning: `
+                    <p>O Parth, the qualities of those who possess a demoniac nature are hypocrisy, arrogance, conceit, anger, harshness, and ignorance.</p>
+            `,
+            commentary: `
+                    <p>Shree Krishna now expounds upon the six traits of those who possess demoniac natures. They are hypocrites, meaning they make an external show of virtuous behavior for impressing others, without possessing the matching internal traits. This creates an artificial Jekyll and Hyde personality, which is impure internally but has the external appearance of being pure.
+
+The behavior of demoniac natured people is arrogant and disrespectful to others. They are proud and conceited about their bodily possessions and designations, such as wealth, education, beauty, position, etc. They become angry when, due to lack of control of the mind, their lust and greed are frustrated. They are cruel and harsh, and devoid of sensitivity for others’ sufferings in their interactions with them. They have no understanding of the spiritual principles and hold unrighteousness to be righteousness.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>इदमद्य मया लब्धमिमं प्राप्स्ये मनोरथम् |</p>
+                    <p>इदमस्तीदमपि मे भविष्यति पुनर्धनम् ||</p>
+                    <p>असौ मया हत: शत्रुर्हनिष्ये चापरानपि |</p>
+                    <p>ईश्वरोऽहमहं भोगी सिद्धोऽहं बलवान्सुखी || </p>
+                    <p>आढ्योऽभिजनवानस्मि कोऽन्योऽस्ति सदृशो मया |</p>
+                    <p>यक्ष्ये दास्यामि मोदिष्य इत्यज्ञानविमोहिता: ||</p>
+            `,
+            meaning: `
+                    <p>The demoniac persons think, “I have gained so much wealth today, and I shall now fulfill this desire of mine. This is mine, and tomorrow I shall have even more. That enemy has been destroyed by me, and I shall destroy the others too! I am like God Himself, I am the enjoyer, I am perfect, I am powerful, and I am happy. I am wealthy and I have highly placed relatives. Who else is equal to me? I shall perform sacrifices (to the celestial gods); I shall give alms; I shall rejoice.” In this way, they are deluded by ignorance.</p>
+            `,
+            commentary: `
+                    <p>Ignoring all morality, the demoniac presume they have a right to enjoy whatever they find pleasurable. They make concerted efforts to orchestrate events to fulfill their ambitions. Realizing that the ritualistic practices of the Vedas will help them become materially affluent, they even perform ritualistic ceremonies to accrue abundance and fame from them. However, like the vulture that flies high but keeps its sight fixed low, the demoniac sometimes rise in social status, but their actions remain mean and lowly. Such people respect power and believe in the principle of “might is right.” Hence, they do not hesitate in even harming or injuring others to eliminate obstacles in the fulfillment of their desires. The Sukti Sudhakar states that there are four kinds of people:
+
+eke satpuruṣāḥ parārthaghaṭakāḥ swārthān parityajya ye
+
+sāmānyāstu parārthamudyamabhṛitaḥ swārthā virodhena ye
+
+te ’mī mānav rākṣasāḥ parahitaṁ swārthāya nighnanti ye
+
+ye tughnanti nirarthakaṁ parahitaṃ te ke na jānīmahe [v5]
+
+“The first kind of people is the saintly personalities who sacrifice their self-interest for the welfare of others. The second kind is common people who believe in engaging in the welfare of others, provided it does not harm them. The third kind is the demoniac who do not mind harming others, if it helps fulfill their self-interest. There is also a fourth kind of people who harm others, for no reason (except sadistic delight). There is no suitable name for them.” Shree Krishna vividly describes the degraded nature of the demoniac-mentality. Blinded by pride, they think along these lines: “I was born in a wealthy and aristocratic family. I am rich and powerful, and I do what I like. There is no need for me to bow down before God because I am like God myself.”
+
+In most cases, when people say “I,” it is their ego speaking, not them. The ego contains personal identifications with opinions, external appearances, resentments, etc. This ego builds a personality of its own, and under its sway, people identify with thoughts, emotions, and bundles of memories, which they see as integral parts of themselves. The ego identifies with owning, but the satisfaction of having is usually short-lived. Concealed within it is a deep-rooted dissatisfaction of “not enough.” This unfulfilled want results in unease, restlessness, boredom, anxiety, and dissatisfaction. Consequently, a much distorted perception of reality is created, which further alienates their perception of “I” from the real self.
+
+The ego creates the biggest untruth in our lives, and makes us believe what we are not. Thus, for progress along the saintly path, all the religious traditions and saints urge us to dismantle our egotistic thought patterns. The Tao Te Ching teaches: “Instead of trying to be the mountain, be the valley of the Universe.” [v6] (Chapter 6) Jesus of Nazareth also stated: “When you are invited, go and sit in the lowest place so that when the host comes, he may say to you, friend, move up higher. For everyone who exalts himself will be humbled, and everyone who humbles himself will be exalted.” (Luke 14:10-11)[v7]. Saint Kabir put this very nicely:
+
+ūñche pānī na ṭike, nīche hī ṭhaharāye
+
+nīchā hoya so bhari pī, ūñchā pyāsā jāya [v8]
+
+“Water does not remain above; it naturally flows down. Those who are low and unassuming drink (God’s grace) to their heart’s content, while those who are high and pompous remain thirsty.”</p>
+            `,
+        },
+        {
+            text: `
+                    <p>मुक्तसङ्गोऽनहंवादी धृत्युत्साहसमन्वित: |</p>
+                    <p>सिद्ध्यसिद्ध्योर्निर्विकार: कर्ता सात्त्विक उच्यते ||</p>
+            `,
+            meaning: `
+                    <p>The performer is said to be in the mode of goodness, when he or she is free from egotism and attachment, endowed with enthusiasm and determination, and equipoised in success and failure.</p>
+            `,
+            commentary: `
+                    <p>Shree Krishna had earlier mentioned the three ingredients of action—knowledge, the action itself, and the doer. Having described the categories of two of them—knowledge and actions—he now moves on to the three kinds of performers of actions. He clarifies that those situated in the mode of goodness are not inactive; rather they work with enthusiasm and determination. The difference is that their work is performed in proper consciousness. Sāttvic doers are mukta sangaḥ, i.e. they do not try to cling to things in worldly attachment, nor do they believe that worldly things can bestow satisfaction to the soul. Hence, they work with noble motives. And since their intentions are pure, they are filled with utsāha (zeal) and dhṛiti (strong resolve) in their endeavors. Their mental attitude results in the least dissipation of energies while working. Thus, they are able to work tirelessly to fulfill their sublime motives. Though they may accomplish great things, they are anaham vādī (free from egotism), and they give all credit for their successes to God.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>मच्चित्त: सर्वदुर्गाणि मत्प्रसादात्तरिष्यसि |</p>
+                    <p>अथ चेत्वमहङ्कारान्न श्रोष्यसि विनङ्क्ष्यसि ||</p>
+            `,
+            meaning: `
+                    <p> If you always remember Me, by My grace you shall overcome all obstacles and difficulties. But if, due to pride, you do not listen to My advice, you will perish.</p>
+            `,
+            commentary: `
+                    <p>Having advised Arjun what to do in the previous verse, Shree Krishna now declares the benefits of following his advice and the repercussions of not following it. The soul should not think that it is in any way independent of God. If we take full shelter of the Lord, with the mind fixed upon him, then by his grace all obstacles and difficulties will be resolved. But if, out of vanity, we disregard the instructions, thinking we know better than the eternal wisdom of God and the scriptures, we will fail to attain the goal of human life, for there is no one superior to God, nor is there any advice better than his.</p>
+            `,
+        },
+       
+            // Add more slokas as needed
+        ];
+
+        let currentIndex = 0;
+
+        function loadSloka(index) {
+            const slokaText = document.getElementById('sloka-text');
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const sloka = slokas[index];
+
+            slokaText.innerHTML = sloka.text;
+            meaningCommentary.innerHTML = sloka.meaning + '<br>' + sloka.commentary;
+        }
+
+        function changeSloka(direction) {
+            currentIndex = (currentIndex + direction + slokas.length) % slokas.length;
+            loadSloka(currentIndex);
+        }
+
+        function toggleMeaning() {
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const button = document.querySelector('.toggle-button');
+
+            if (meaningCommentary.style.display === 'none' || meaningCommentary.style.display === '') {
+                meaningCommentary.style.display = 'block';
+                button.textContent = 'Hide Meaning & Commentary';
+            } else {
+                meaningCommentary.style.display = 'none';
+                button.textContent = 'Show Meaning & Commentary';
+            }
+        }
+
+        // Load the first sloka on page load
+        window.onload = function() {
+            loadSloka(currentIndex);
+        };
+    </script>
+
+</body>
+</html>

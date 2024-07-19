@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloka Page</title>
+    <link rel="stylesheet" href="page2-styles.css">
+</head>
+<body>
+
+    <div class="background">
+        <div class="content">
+            <div class="sloka-container">
+                <div class="box">
+                    <div class="sloka" id="sloka-text">
+                        <!-- Sloka content will be loaded here -->
+                    </div>
+                    <button class="toggle-button" onclick="toggleMeaning()">Show Meaning & Commentary</button>
+                    <div class="meaning-commentary" id="meaning-commentary">
+                        <!-- Meaning and Commentary content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            <button class="nav-button left" onclick="changeSloka(-1)">&#10094;</button>
+            <button class="nav-button right" onclick="changeSloka(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const slokas = [
+        {
+            text: `
+                    <p>ज्यायसी चेत्कर्मणस्ते मता बुद्धिर्जनार्दन |</p>
+                    <p>तत्किं कर्मणि घोरे मां नियोजयसि केशव || </p>
+                    <p>व्यामिश्रेणेव वाक्येन बुद्धिं मोहयसीव मे |</p>
+                    <p>तदेकं वद निश्चित्य येन श्रेयोऽहमाप्नुयाम् || </p>
+                                        
+            `,
+            meaning: `
+                    <p>Arjun said: O Janardan, if You consider knowledge superior to action, then why do You ask me to wage this terrible war? My intellect is bewildered by Your ambiguous advice. Please tell me decisively the one path by which I may attain the highest good.</p>
+            `,
+            commentary: `
+                    <p>Chapter one introduced the setting in which Arjun’s grief and lamentation arose, creating a reason for Shree Krishna to give spiritual instructions. In chapter two, the Lord first explained knowledge of the immortal self. He then reminded Arjun of his duty as a warrior, and said that performing it would result in glory and the celestial abodes. After prodding Arjun to do his occupational work as a Kshatriya, Shree Krishna then revealed a superior principle—the science of karm yog—and asked Arjun to detach himself from the fruits of his works. In this way, bondage-creating karmas would be transformed into bondage-breaking karmas. He termed the science of working without desire for rewards as buddhi yog, or Yog of the intellect. By this, he meant that the mind should be detached from worldly temptations by controlling it with a resolute intellect; and the intellect should be made unwavering through the cultivation of spiritual knowledge. He did not suggest that actions should be given up, but rather that attachment to the fruits of actions should be given up.
+
+Arjun misunderstood Shree Krishna’s intention, thinking that if knowledge is superior to action, then why should he perform the ghastly duty of waging this war? Hence, he says, “By making contradictory statements, you are bewildering my intellect. I know you are merciful and your desire is not to baffle me, so please dispel my doubt.”</p>
+            `,
+        },
+        {
+            text: `
+                    <p>ईश्वर: सर्वभूतानां हृद्देशेऽर्जुन तिष्ठति |</p>
+                    <p>भ्रामयन्सर्वभूतानि यन्त्रारूढानि मायया ||</p>
+            `,
+            meaning: `
+                    <p>The Supreme Lord dwells in the hearts of all living beings, O Arjun. According to their karmas, He directs the wanderings of the souls, who are seated on a machine made of material energy.</p>
+            `,
+            commentary: `
+                    <p>Emphasizing the dependence of the soul upon God, Shree Krishna says, “Arjun, whether you choose to obey me or not, your position will always remain under my dominion. The body in which you reside is a machine made from my material energy. Based upon your past karmas, I have given you the kind of body you deserved. I too am seated in it, and am noting all your thoughts, words, and deeds. So, I will also judge whatever you do in the present, to decide your future. Do not think you are independent of me in any condition. Hence Arjun, it is in your self-interest to surrender to me.”</p>
+            `,
+        },
+            // Add more slokas as needed
+        ];
+
+        let currentIndex = 0;
+
+        function loadSloka(index) {
+            const slokaText = document.getElementById('sloka-text');
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const sloka = slokas[index];
+
+            slokaText.innerHTML = sloka.text;
+            meaningCommentary.innerHTML = sloka.meaning + '<br>' + sloka.commentary;
+        }
+
+        function changeSloka(direction) {
+            currentIndex = (currentIndex + direction + slokas.length) % slokas.length;
+            loadSloka(currentIndex);
+        }
+
+        function toggleMeaning() {
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const button = document.querySelector('.toggle-button');
+
+            if (meaningCommentary.style.display === 'none' || meaningCommentary.style.display === '') {
+                meaningCommentary.style.display = 'block';
+                button.textContent = 'Hide Meaning & Commentary';
+            } else {
+                meaningCommentary.style.display = 'none';
+                button.textContent = 'Show Meaning & Commentary';
+            }
+        }
+
+        // Load the first sloka on page load
+        window.onload = function() {
+            loadSloka(currentIndex);
+        };
+    </script>
+
+</body>
+</html>

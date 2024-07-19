@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloka Page</title>
+    <link rel="stylesheet" href="page2-styles.css">
+</head>
+<body>
+
+    <div class="background">
+        <div class="content">
+            <div class="sloka-container">
+                <div class="box">
+                    <div class="sloka" id="sloka-text">
+                        <!-- Sloka content will be loaded here -->
+                    </div>
+                    <button class="toggle-button" onclick="toggleMeaning()">Show Meaning & Commentary</button>
+                    <div class="meaning-commentary" id="meaning-commentary">
+                        <!-- Meaning and Commentary content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            <button class="nav-button left" onclick="changeSloka(-1)">&#10094;</button>
+            <button class="nav-button right" onclick="changeSloka(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const slokas = [
+        {
+            text: `
+                    <p>न द्वेष्ट्यकुशलं कर्म कुशले नानुषज्जते |</p>
+                    <p>त्यागी सत्त्वसमाविष्टो मेधावी छिन्नसंशय: ||</p>
+            `,
+            meaning: `
+                    <p>Those who neither avoid disagreeable work nor seek work because it is agreeable are persons of true renunciation. They are endowed with the quality of the mode of goodness and have no doubts (about the nature of work).</p>
+            `,
+            commentary: `
+                    <p>People who are situated in sāttvic renunciation are not miserable in disagreeable circumstances; nor do they get attached to situations that are agreeable to them. They simply do their duty under all conditions, without feeling elated when the going is good or feeling dejected when life becomes tough. They are not like a dry leaf that is tossed hither and tither by every passing breeze. Instead, they are like the reeds in the sea, gently negotiating every rising and falling wave. While retaining their equanimity and without succumbing to anger, greed, envy, or attachment, they watch the waves of events rising and falling around them. Bal Gangadhar Tilak was a scholar of the Bhagavad Gita and a famous karm yogi. Before Mahatma Gandhi came on the scene, he was at the forefront of the freedom struggle of India. He was asked what position he would choose if India became independent—Prime Minister or Foreign Minister? He replied, “My ambition was to write a book on Differential Calculus. I will fulfill it.” Once, the police arrested him for creating unrest. He asked his friend to find out the provisions under which he was arrested, and to inform him in prison. When the friend reached him after an hour, he was fast asleep in the jail. Another time, he was working in his office, and his clerk brought him the news that his elder son was seriously ill. Instead of getting emotionally wrought, he asked the clerk to get a doctor, and he continued working. Half an hour later, his friend came and conveyed the same news. He said, “I have called for the doctor to see him. What else can I do?” These instances reveal how he retained his composure despite being in the midst of tumultuous situations. He was able to continue performing his actions because of the internal emotional composure; had he been emotionally distressed he would have been unable to sleep in the jail cell or concentrate on his work at the office.</p>
+            `,
+        },
+        {
+            text: `
+                    <p>इत्यर्जुनं वासुदेवस्तथोक्त्वा स्वकं रूपं दर्शयामास भूय: |</p>
+                    <p>आश्वासयामास च भीतमेनं भूत्वा पुन: सौम्यवपुर्महात्मा || </p>
+            `,
+            meaning: `
+                    <p>Sanjay said: Having spoken thus, the compassionate son of Vasudev displayed His personal (four-armed) form again. Then, He further consoled the frightened Arjun by assuming His gentle (two-armed) form.</p>
+            `,
+            commentary: `
+                    <p>Shree Krishna hid the vision of his cosmic form, and manifested before Arjun in his four-armed form, which is adorned with a golden diadem, disc, mace, and lotus flower. It is the repository of all divine opulences such as majesty, omniscience, omnipotence, etc. The four-armed form of Shree Krishna evokes the sentiment of awe and reverence, much like the sentiments of the citizens of a kingdom toward their king. However, Arjun was a sakhā (friend) of Shree Krishna, and devotion dominated by the sentiment of awe and reverence would never satisfy him. He had played with Shree Krishna, eaten with him, confided his private secrets to him, and shared loving personal moments with him. Such blissful devotion of sakhya bhāv (devotion where God is seen as a personal friend) is infinitely sweeter than aiśhwarya bhakti (devotion where God is revered as the distant and almighty Lord). Hence, to conform to Arjun’s sentiment of devotion, Shree Krishna finally hid even his four-armed form, and transformed into his original two-armed form.
+
+Once in the forest of Vrindavan, Shree Krishna was engaging in loving pastimes with the gopīs, when he suddenly disappeared from their midst. The gopīs prayed for him to come back. Hearing their supplications, he manifested again, but in his four-armed form. The gopīs thought him to be the Supreme Lord Vishnu, and accordingly they paid their obeisance. But they moved on, not being attracted to spend any further time with him. They had been habituated to seeing the Supreme Lord Shree Krishna as their soul-beloved, and this form of his as Lord Vishnu held no attraction for them. However, Radharani came onto the scene, and upon seeing her, Shree Krishna became overwhelmed in love for her, and could no longer maintain his four-armed form. His two arms automatically disappeared and he resumed his two-armed form. In this verse too, Shree Krishna returned to his most attractive two-armed form.</p>
+            `,
+        }
+        
+        ];
+
+        let currentIndex = 0;
+
+        function loadSloka(index) {
+            const slokaText = document.getElementById('sloka-text');
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const sloka = slokas[index];
+
+            slokaText.innerHTML = sloka.text;
+            meaningCommentary.innerHTML = sloka.meaning + '<br>' + sloka.commentary;
+        }
+
+        function changeSloka(direction) {
+            currentIndex = (currentIndex + direction + slokas.length) % slokas.length;
+            loadSloka(currentIndex);
+        }
+
+        function toggleMeaning() {
+            const meaningCommentary = document.getElementById('meaning-commentary');
+            const button = document.querySelector('.toggle-button');
+
+            if (meaningCommentary.style.display === 'none' || meaningCommentary.style.display === '') {
+                meaningCommentary.style.display = 'block';
+                button.textContent = 'Hide Meaning & Commentary';
+            } else {
+                meaningCommentary.style.display = 'none';
+                button.textContent = 'Show Meaning & Commentary';
+            }
+        }
+
+        // Load the first sloka on page load
+        window.onload = function() {
+            loadSloka(currentIndex);
+        };
+    </script>
+
+</body>
+</html>
